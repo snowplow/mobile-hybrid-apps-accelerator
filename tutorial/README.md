@@ -41,5 +41,5 @@ This tutorial guides you to instrument Snowplow tracking in both the Web view an
 It is structured in three parts:
 
 1. [Installation](1-installation.md) of the trackers in your apps.
-2. Instrumenting your native ([iOS](3B-ios_app.md) or [Android](3A-android_app.md)) app with the mobile trackers and setting up the Web view communication.
-3. [Tracking events from your Web view](2-webview.md) with the WebView tracker.
+2. [Instrumenting your native iOS or Android app](2-mobile_trackers_usage.md) with the mobile trackers and setting up the Web view communication.
+3. [Tracking events from your Web view](3-webview_usage.md) with the WebView tracker.
