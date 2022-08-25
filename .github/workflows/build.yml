@@ -1,0 +1,40 @@
+on:
+  push:
+
+jobs:
+  confluence_job:
+    runs-on: ubuntu-latest
+    name: Build
+    steps:
+      - name: Checkout template repo
+        uses: actions/checkout@v3
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          repository: snowplow-incubator/action-accelerator-web-ui
+
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          path: main
+
+
+      - name: Move the content folder
+        run: |
+          mv ./main/content .
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          # extended: true
+
+      - name: Build
+        run: hugo
+
+      - name: Deploy
+        if: success()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

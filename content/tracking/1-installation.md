@@ -1,4 +1,8 @@
-# Installing the trackers
++++
+title = "Installing the trackers"
+weight = 1
+post = ""
++++
 
 To instrument tracking, you will need to install tracker libraries both in the Web view as well as the native mobile app.
 
