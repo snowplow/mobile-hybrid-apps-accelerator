@@ -1,4 +1,8 @@
-# Configuring and using the iOS and Android trackers
++++
+title = "Configuring and using the iOS and Android trackers"
+weight = 2
+post = ""
++++
 
 Having installed the tracker dependencies, the next step is to initialize the tracker instances in your app.
 Tracker instances are initialized given configuration that includes network settings, tracker feature settings, session settings, and more.
