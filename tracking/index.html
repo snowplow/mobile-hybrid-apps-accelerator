@@ -12,20 +12,20 @@
     <title>Tracking :: Snowplow Hybrid Apps Accelerator</title>
 
     
-    <link href="/snowplow-hybrid-apps-accelerator/css/nucleus.css?1661504543" rel="stylesheet">
-    <link href="/snowplow-hybrid-apps-accelerator/css/fontawesome-all.min.css?1661504543" rel="stylesheet">
-    <link href="/snowplow-hybrid-apps-accelerator/css/hybrid.css?1661504543" rel="stylesheet">
-    <link href="/snowplow-hybrid-apps-accelerator/css/featherlight.min.css?1661504543" rel="stylesheet">
-    <link href="/snowplow-hybrid-apps-accelerator/css/perfect-scrollbar.min.css?1661504543" rel="stylesheet">
-    <link href="/snowplow-hybrid-apps-accelerator/css/auto-complete.css?1661504543" rel="stylesheet">
-    <link href="/snowplow-hybrid-apps-accelerator/css/atom-one-dark-reasonable.css?1661504543" rel="stylesheet">
-    <link href="/snowplow-hybrid-apps-accelerator/css/theme.css?1661504543" rel="stylesheet">
-    <link href="/snowplow-hybrid-apps-accelerator/css/tabs.css?1661504543" rel="stylesheet">
-    <link href="/snowplow-hybrid-apps-accelerator/css/hugo-theme.css?1661504543" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/nucleus.css?1661505587" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/fontawesome-all.min.css?1661505587" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/hybrid.css?1661505587" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/featherlight.min.css?1661505587" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/perfect-scrollbar.min.css?1661505587" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/auto-complete.css?1661505587" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/atom-one-dark-reasonable.css?1661505587" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/theme.css?1661505587" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/tabs.css?1661505587" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/hugo-theme.css?1661505587" rel="stylesheet">
     
     
 
-    <script src="/snowplow-hybrid-apps-accelerator/js/jquery-3.3.1.min.js?1661504543"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/jquery-3.3.1.min.js?1661505587"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -277,13 +277,21 @@
 
 
 
-	<p>Mobile hybrid apps implement some app logic in the platform native code (e.g., in Swift or Java) while some UI is implemented using embedded Web views.
+	<h1 id="tracking">Tracking</h1>
+<p>Mobile hybrid apps implement some app logic in the platform native code (e.g., in Swift or Java) while some UI is implemented using embedded Web views.
 Since the two parts are developed using separate code bases, Snowplow events need to be tracked separately.</p>
 <p>The diagram below shows the interaction between different components in a hybrid app in relation to Snowplow event tracking.
 Events can be tracked from app logic both inside the Web view as well as the native code.
 Native code events are tracked using the <a href="https://github.com/snowplow/snowplow-objc-tracker">Snowplow iOS</a> or <a href="https://github.com/snowplow/snowplow-android-tracker">Android tracker</a> that sends them to the Snowplow Collector.
 Web view events are tracked using the <a href="https://github.com/snowplow-incubator/snowplow-webview-tracker">WebView tracker</a> that passes them to be tracked by the Snowplow iOS or Android tracker.</p>
-<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">flowchart TB
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true });
+</script>
+
+<div class="mermaid" align="center">
+    
+flowchart TB
 
 subgraph hybridApp[Hybrid Mobile App]
 
@@ -291,31 +299,41 @@ subgraph hybridApp[Hybrid Mobile App]
         webViewCode[App logic]
         webViewTracker[Snowplow WebView tracker]
 
-        webViewCode -- &#34;Tracks events&#34; --&gt; webViewTracker
+        webViewCode -- "Tracks events" --> webViewTracker
     end
 
     subgraph nativeCode[Native Code]
         nativeAppCode[App logic]
         nativeTracker[Snowplow iOS/Android tracker]
 
-        nativeAppCode -- &#34;Tracks events&#34; --&gt; nativeTracker
+        nativeAppCode -- "Tracks events" --> nativeTracker
     end
 
-    webViewTracker -- &#34;Forwards events&#34; --&gt; nativeTracker
+    webViewTracker -- "Forwards events" --> nativeTracker
 end
 
 subgraph cloud[Cloud]
     collector[Snowplow Collector]
 end
 
-nativeTracker -- &#34;Sends tracked events&#34; --&gt; collector
-</code></pre><p>This tutorial guides you to instrument Snowplow tracking in both the Web view and native mobile code and track events with consistent session and properties on both sides.
-It is structured in three parts:</p>
-<ol>
-<li><a href="1-installation.md">Installation</a> of the trackers in your apps.</li>
-<li><a href="2-mobile_trackers_usage.md">Instrumenting your native iOS or Android app</a> with the mobile trackers and setting up the Web view communication.</li>
-<li><a href="3-webview_usage.md">Tracking events from your Web view</a> with the WebView tracker.</li>
-</ol>
+nativeTracker -- "Sends tracked events" --> collector
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true });
+</script>
+
+<div class="mermaid" align="center">
+    
+
+This tutorial guides you to instrument Snowplow tracking in both the Web view and native mobile code and track events with consistent session and properties on both sides.
+It is structured in three parts:
+
+1. [Installation](/snowplow-hybrid-apps-accelerator/tracking/1-installation/) of the trackers in your apps.
+2. [Instrumenting your native iOS or Android app](/snowplow-hybrid-apps-accelerator/tracking/2-mobile_trackers_usage/) with the mobile trackers and setting up the Web view communication.
+3. [Tracking events from your Web view](/snowplow-hybrid-apps-accelerator/tracking/3-webview_usage/) with the WebView tracker.
+
+</div>
+</div>
 
 
 
@@ -459,16 +477,16 @@ It is structured in three parts:</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/snowplow-hybrid-apps-accelerator/js/clipboard.min.js?1661504543"></script>
-    <script src="/snowplow-hybrid-apps-accelerator/js/perfect-scrollbar.min.js?1661504543"></script>
-    <script src="/snowplow-hybrid-apps-accelerator/js/perfect-scrollbar.jquery.min.js?1661504543"></script>
-    <script src="/snowplow-hybrid-apps-accelerator/js/jquery.sticky.js?1661504543"></script>
-    <script src="/snowplow-hybrid-apps-accelerator/js/featherlight.min.js?1661504543"></script>
-    <script src="/snowplow-hybrid-apps-accelerator/js/highlight.pack.js?1661504543"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/clipboard.min.js?1661505587"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/perfect-scrollbar.min.js?1661505587"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/perfect-scrollbar.jquery.min.js?1661505587"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/jquery.sticky.js?1661505587"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/featherlight.min.js?1661505587"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/highlight.pack.js?1661505587"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/snowplow-hybrid-apps-accelerator/js/modernizr.custom-3.6.0.js?1661504543"></script>
-    <script src="/snowplow-hybrid-apps-accelerator/js/learn.js?1661504543"></script>
-    <script src="/snowplow-hybrid-apps-accelerator/js/hugo-learn.js?1661504543"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/modernizr.custom-3.6.0.js?1661505587"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/learn.js?1661505587"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/hugo-learn.js?1661505587"></script>
     
         
             <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>
