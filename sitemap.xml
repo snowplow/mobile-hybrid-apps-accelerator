@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>$%7BBASE_URL%7D/tracking/1-installation/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/tracking/1-installation/</loc>
   </url><url>
-    <loc>$%7BBASE_URL%7D/tracking/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/tracking/</loc>
   </url><url>
-    <loc>$%7BBASE_URL%7D/tracking/2-mobile_trackers_usage/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/tracking/2-mobile_trackers_usage/</loc>
   </url><url>
-    <loc>$%7BBASE_URL%7D/modeling/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/modeling/</loc>
   </url><url>
-    <loc>$%7BBASE_URL%7D/tracking/3-webview_usage/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/tracking/3-webview_usage/</loc>
   </url><url>
-    <loc>$%7BBASE_URL%7D/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/</loc>
     <priority>0</priority>
   </url><url>
-    <loc>$%7BBASE_URL%7D/categories/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/categories/</loc>
   </url><url>
-    <loc>$%7BBASE_URL%7D/tags/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/tags/</loc>
   </url>
 </urlset>
