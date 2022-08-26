@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Modeling on Advanced Analytics for Web</title>
+    <title>Modeling on ${TITLE}</title>
     <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modeling/</link>
-    <description>Recent content in Modeling on Advanced Analytics for Web</description>
+    <description>Recent content in Modeling on ${TITLE}</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language><atom:link href="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modeling/index.xml" rel="self" type="application/rss+xml" />
   </channel>
