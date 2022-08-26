@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Modelling on Advanced Analytics for Web</title>
+    <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modelling/</link>
+    <description>Recent content in Modelling on Advanced Analytics for Web</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 16 Aug 2022 17:24:05 +0100</lastBuildDate><atom:link href="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modelling/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Snowplow dbt Package</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modelling/modelling_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modelling/modelling_1/</guid>
+      <description>Step 1: Add snowplow-web package Add the snowplow-web package to your packages.yml file. The latest version can be found here
+packages: - package: snowplow/snowplow_web version: 0.9.0 Step 2: Install the package Install the package by running:
+dbt deps </description>
+    </item>
+    
+    <item>
+      <title>Setup dbt Package</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modelling/modelling_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modelling/modelling_2/</guid>
+      <description>At this stage you should have tracking and enrichment setup as well as:
+Data in the atomic.events table Enabled IAB, UA parser and YAUAA enrichments Step 1: Setup Variables Edit the dbt_project.yml which can be found at [dbt_project_name]/dbt_packages/snowplow_web/dbt_project.yml with the below options.
+snowplow__start_date: The date of the first tracked event inside your atomic.events table you would like to model. snowplow__backfill_limit_days: The maximum number of days of new data to be processed since the latest event processed.</description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modelling/modelling_3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modelling/modelling_3/</guid>
+      <description>Data should now be loaded into your warehouse, next we will check the models output.
+Step 1: Check the output Head to the SQL editor of your choice (e.g.: Snowflake Web UI) to check the model&amp;rsquo;s output. You should be able to see three new schemas created:
+[your_custom_schema_name_]scratch: drop and recompute models that aid the incremental run [your_custom_schema_name_]derived: main output models you can use in your downstream models and reporting [your_custom_schema_name_]manifest: tables that help the integrity and core incremental logic of the model Check out the database section of the [documentation site] [snowplow-web-documentation] for a breakdown of what the output should look like.</description>
+    </item>
+    
+  </channel>
+</rss>

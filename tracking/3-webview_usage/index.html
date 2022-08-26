@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="description" content="Advanced Analytics for Web">
+<meta name="author" content="Agnes Kiss and Jack Keene">
+
+    <link rel="icon" href="/advanced-analytics-web-accelerator/images/favicon.png" type="image/png">
+
+    <title>Setting up tracking in Web views :: Advanced Analytics for Web</title>
+
+    
+    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1661502060" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1661502060" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1661502060" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1661502060" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1661502060" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1661502060" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1661502060" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme.css?1661502060" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1661502060" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1661502060" rel="stylesheet">
+    
+    
+
+    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1661502060"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/advanced-analytics-web-accelerator/tracking/3-webview_usage/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator">
+    <img src="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/images/logo.png" />
+</a>
+    </div>
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'>Introduction</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/advanced-analytics-web-accelerator/tracking/" title="Tracking" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/advanced-analytics-web-accelerator/tracking/">
+          <b>1. </b>Tracking
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced-analytics-web-accelerator/tracking/1-installation/" title="Installing the trackers" class="dd-item ">
+        <a href="/advanced-analytics-web-accelerator/tracking/1-installation/">
+        Installing the trackers
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced-analytics-web-accelerator/tracking/2-mobile_trackers_usage/" title="Configuring and using the iOS and Android trackers" class="dd-item ">
+        <a href="/advanced-analytics-web-accelerator/tracking/2-mobile_trackers_usage/">
+        Configuring and using the iOS and Android trackers
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced-analytics-web-accelerator/tracking/3-webview_usage/" title="Setting up tracking in Web views" class="dd-item active">
+        <a href="/advanced-analytics-web-accelerator/tracking/3-webview_usage/">
+        Setting up tracking in Web views
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/advanced-analytics-web-accelerator/modeling/" title="Modeling" class="dd-item
+        
+        
+        
+        ">
+      <a href="/advanced-analytics-web-accelerator/modeling/">
+          <b>2. </b>Modeling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://try.snowplowanalytics.com/">Try Snowplow</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/advanced-analytics-web-accelerator/'></a> > <a href='/advanced-analytics-web-accelerator/tracking/'>Tracking</a> > Setting up tracking in Web views
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#event-tracking-api">Event tracking API</a></li>
+    <li><a href="#track-self-describing-events-with-trackselfdescribingevent">Track self-describing events with <code>trackSelfDescribingEvent</code></a></li>
+    <li><a href="#track-structured-events-with-structured">Track structured events with <code>Structured</code></a></li>
+    <li><a href="#track-screen-views-with-trackscreenview">Track screen views with <code>trackScreenView</code></a></li>
+    <li><a href="#track-web-page-views-with-trackpageview">Track Web page views with <code>trackPageView</code></a></li>
+    <li><a href="#adding-data-to-your-events-using-context-entities">Adding data to your events using context entities</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Setting up tracking in Web views
+            </h1>
+          
+
+        
+
+
+<p>In the <a href="1-installation.md">Installation section</a>, you installed the <a href="https://github.com/snowplow-incubator/snowplow-webview-tracker">WebView tracker</a> in your JavaScript Web app that is accessed in the mobile Web views.
+After that, you <a href="2-mobile_trackers_usage.md">learned how to</a> configure and use the mobile trackers to track events and subscribe to events from Web views.
+This section explains how to use the WebView tracker to track events inside Web views.</p>
+<h2 id="event-tracking-api">Event tracking API</h2>
+<p>The tracker provides a set of functions to manually track events.
+The functions range from single purpose ones, such as <code>trackScreenView</code>, to the more complex but flexible <code>trackSelfDescribingEvent</code>, which can be used to track any kind of user behaviour.
+We strongly recommend using <code>trackSelfDescribingEvent</code> for your tracking, as it allows you to design custom event types to match your business requirements. <a href="https://snowplowanalytics.com/blog/2020/01/24/re-thinking-the-structure-of-event-data/">This post</a> on our blog, &ldquo;Re-thinking the structure of event data&rdquo; might be informative here.</p>
+<p>You can import the functions from the <code>@snowplow/webview-tracker</code> package:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">trackSelfDescribingEvent</span>, <span style="color:#a6e22e">trackScreenView</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@snowplow/webview-tracker&#39;</span>;
+</span></span></code></pre></div><p>The following functions are available:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Event type tracked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>trackSelfDescribingEvent</code></td>
+<td>Track a custom event based on &ldquo;self-describing&rdquo; JSON schema</td>
+</tr>
+<tr>
+<td><code>trackStructEvent</code></td>
+<td>Track a semi-custom structured event</td>
+</tr>
+<tr>
+<td><code>trackScreenView</code></td>
+<td>Track a view of a screen in the app (to be used with the <a href="https://docs.snowplowanalytics.com/docs/modeling-your-data/the-snowplow-mobile-model/">Snowplow mobile data model</a>)</td>
+</tr>
+<tr>
+<td><code>trackPageView</code></td>
+<td>Track a Web page visit (to be used with the <a href="https://docs.snowplowanalytics.com/docs/modeling-your-data/the-snowplow-web-data-model/">Snowplow web data model</a>)</td>
+</tr>
+</tbody>
+</table>
+<p>All the methods share common features and parameters. Every type of event can have an optional context added. See the end of this section to learn about adding context entities to events. It&rsquo;s important to understand how event context works, as it is one of the most powerful Snowplow features. Adding event context entities is a way to add depth, richness and value to all of your events.</p>
+<p>All of the <code>trackXYZ()</code> methods accept two arguments:</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>event</code></td>
+<td>Event body, depends on the event being tracked</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>trackers</code></td>
+<td>Optional list of tracker namespaces to track the event with (undefined for default tracker)</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>For instance, the following tracks a structured event (explained below) using a tracker initialized with the namespace <code>ns1</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">trackStructEvent</span>(
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">category</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;shop&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">action</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;add-to-basket&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#e6db74">&#39;ns1&#39;</span>]
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><h2 id="track-self-describing-events-with-trackselfdescribingevent">Track self-describing events with <code>trackSelfDescribingEvent</code></h2>
+<p>Use the <code>trackSelfDescribingEvent</code> function to track a custom event.
+This is the most advanced and powerful tracking method, which requires a certain amount of planning and infrastructure.</p>
+<p>Self-describing events are based around &ldquo;self-describing&rdquo; (self-referential) JSONs, which are a specific kind of <a href="http://json-schema.org/">JSON schema</a>.
+A unique schema can be designed for each type of event that you want to track.
+This allows you to track the specific things that are important to you, in a way that is defined by you.</p>
+<p>This is particularly useful when:</p>
+<ul>
+<li>You want to track event types which are proprietary/specific to your business</li>
+<li>You want to track events which have unpredictable or frequently changing properties</li>
+</ul>
+<p>A self-describing JSON has two keys, <code>schema</code> and <code>data</code>.
+The <code>schema</code> value should point to a valid self-describing JSON schema.
+They are called self-describing because the schema will specify the fields allowed in the data value.
+Read more about how schemas are used with Snowplow <a href="https://docs.snowplowanalytics.com/docs/understanding-tracking-design/understanding-schemas-and-validation/">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>event.schema</code></td>
+<td>The grouping of structured events which this action belongs to</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>event.data</code></td>
+<td>Defines the type of user interaction which this event involves</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>context</code></td>
+<td>List of context entities as self-describing JSONs</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>Example using the default tracker:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">trackSelfDescribingEvent</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">event</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">schema</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;iglu:com.example_company/save_game/jsonschema/1-0-2&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;saveId&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;4321&#39;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;level&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">23</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;difficultyLevel&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;HARD&#39;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;dlContent&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h2 id="track-structured-events-with-structured">Track structured events with <code>Structured</code></h2>
+<p>This method provides a halfway-house between tracking fully user-defined self-describing events and out-of-the box predefined events.
+This event type can be used to track many types of user activity, as it is somewhat customizable.
+&ldquo;Struct&rdquo; events closely mirror the structure of Google Analytics events, with &ldquo;category&rdquo;, &ldquo;action&rdquo;, &ldquo;label&rdquo;, and &ldquo;value&rdquo; properties.</p>
+<p>As these fields are fairly arbitrary, we recommend following the advice in this table how to define structured events.
+It&rsquo;s important to be consistent throughout the business about how each field is used.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category</code></td>
+<td>The grouping of structured events which this action belongs to</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>action</code></td>
+<td>Defines the type of user interaction which this event involves</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td>Often used to refer to the &lsquo;object&rsquo; the action is performed on</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>property</code></td>
+<td>Describing the &lsquo;object&rsquo;, or the action performed on it</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td>Provides numerical data about the event</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>context</code></td>
+<td>List of context entities as self-describing JSONs</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">trackStructEvent</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">category</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;shop&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">action</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;add-to-basket&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Add To Basket&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">property</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;pcs&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2.00</span>,
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h2 id="track-screen-views-with-trackscreenview">Track screen views with <code>trackScreenView</code></h2>
+<p>Use <code>ScreenView</code> to track a user viewing a screen (or similar) within your app.
+This is the page view equivalent for apps that are not webpages.
+Screen view events are used in the <a href="https://docs.snowplowanalytics.com/docs/modeling-your-data/the-snowplow-mobile-model/">Snowplow mobile data model</a>.</p>
+<p>This method creates an unstruct event, by creating and tracking a self-describing event.
+The schema ID for this is &ldquo;iglu:com.snowplowanalytics.snowplow/screen_view/jsonschema/1-0-0&rdquo;, and the data field will contain the parameters which you provide.
+That schema is hosted on the schema repository Iglu Central, and so will always be available to your pipeline.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>The human-readable name of the screen viewed.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>The id (UUID v4) of screen that was viewed.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>The type of screen that was viewed.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>previousName</code></td>
+<td>The name of the previous screen that was viewed.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>previousType</code></td>
+<td>The type of screen that was viewed.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>previousId</code></td>
+<td>The id (UUID v4) of the previous screen that was viewed.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>transitionType</code></td>
+<td>The type of transition that led to the screen being viewed.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>context</code></td>
+<td>List of context entities as self-describing JSONs</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">trackScreenView</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2c295365-eae9-4243-a3ee-5c4b7baccc8f&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;home&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;full&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">transitionType</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;none&#39;</span>
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h2 id="track-web-page-views-with-trackpageview">Track Web page views with <code>trackPageView</code></h2>
+<p>The <code>PageViewEvent</code> may be used to track page views on the Web.
+The event is designed to track web page views and automatically captures page title, referrer and URL.</p>
+<p>Page view events are the basic building blocks for the <a href="https://docs.snowplowanalytics.com/docs/modeling-your-data/the-snowplow-web-data-model/">Snowplow web data model</a>.
+For mobile apps we recommend using the mobile data model and tracking screen view events instead.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>Override the page title.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>context</code></td>
+<td>List of context entities as self-describing JSONs</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">trackPageView</span>();
+</span></span></code></pre></div><h2 id="adding-data-to-your-events-using-context-entities">Adding data to your events using context entities</h2>
+<p>Event context is an incredibly powerful aspect of Snowplow tracking, which allows you to create very rich data.
+It is based on the same self-describing JSON schemas as the self-describing events.
+Using event context, you can add any details you like to your events, as long as you can describe them in a self-describing JSON schema.</p>
+<p>Each schema will describe a single &ldquo;entity&rdquo;.
+All of an event&rsquo;s entities together form the event context.
+The event context will be sent as one field of the event, finally ending up in one column (<code>context</code>) in your data storage.
+There is no limit to how many entities can be attached to one event.</p>
+<p>Note that context can be added to any event type, not just self-describing events.
+This means that even a simple event type like a page view can hold complex and extensive information – reducing the chances of data loss and the amount of modelling (JOINs etc.) needed in modelling, while increasing the value of each event, and the sophistication of the possible use cases.</p>
+<p>The entities you provide are validated against their schemas as the event is processed (during the enrich phase).
+If there is a mistake or mismatch, the event is processed as a Bad Event.</p>
+<p>Once defined, an entity can be attached to any kind of event.
+This is also an important point; it means your tracking is as DRY as possible.
+Using the same &ldquo;user&rdquo; or &ldquo;image&rdquo; or &ldquo;search result&rdquo; (etc.) entities throughout your tracking reduces error, and again makes the data easier to model.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">trackStructEvent</span>(
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">category</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;shop&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">action</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;add-to-basket&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Add To Basket&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">property</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;pcs&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2.00</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">context</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">schema</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;iglu:com.my_company/movie_poster/jsonschema/1-0-0&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">movie_name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Solaris&#39;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">poster_country</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;JP&#39;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">poster_date</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;1978-01-01&#39;</span>
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">schema</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;iglu:com.my_company/customer/jsonschema/1-0-0&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">p_buy</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0.23</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">segment</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;young_adult&#39;</span>
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#e6db74">&#39;ns1&#39;</span>]
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div>
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/tracking/2-mobile_trackers_usage/" title="Configuring and using the iOS and Android trackers"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/modeling/" title="Modeling" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1661502060"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1661502060"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1661502060"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1661502060"></script>
+    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1661502060"></script>
+    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1661502060"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1661502060"></script>
+    <script src="/advanced-analytics-web-accelerator/js/learn.js?1661502060"></script>
+    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1661502060"></script>
+    
+        
+            <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+

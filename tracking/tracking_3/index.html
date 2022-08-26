@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="description" content="Advanced Analytics for Web">
+<meta name="author" content="Agnes Kiss and Jack Keene">
+
+    <link rel="icon" href="/advanced-analytics-web-accelerator/images/favicon.png" type="image/png">
+
+    <title>Adding Context :: Advanced Analytics for Web</title>
+
+    
+    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1661164663" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1661164663" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1661164663" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1661164663" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1661164663" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1661164663" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1661164663" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme.css?1661164663" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1661164663" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1661164663" rel="stylesheet">
+    
+    
+
+    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1661164663"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/advanced-analytics-web-accelerator/tracking/tracking_3/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+  
+  
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator">
+    <img src="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/images/logo.png" />
+</a>
+    </div>
+    
+  </div>
+  
+  <section id="homelinks">
+    <ul>
+      <li>
+        <a class="padding" href='https://snowplow-incubator.github.io/advanced-analytics-web-accelerator'>Introduction</a>
+      </li>
+    </ul>
+  </section>
+  
+
+  <div class="highlightable">
+    <ul class="topics">
+
+      
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/advanced-analytics-web-accelerator/tracking/" title="Tracking" class="dd-item
+        parent
+        
+        
+        ">
+  <a href="/advanced-analytics-web-accelerator/tracking/">
+    <b>1. </b>Tracking
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/advanced-analytics-web-accelerator/tracking/tracking_1/" title="Setup"
+  class="dd-item ">
+  <a href="/advanced-analytics-web-accelerator/tracking/tracking_1/">
+    Setup
+    <i class="fas fa-check read-icon"></i>
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/advanced-analytics-web-accelerator/tracking/tracking_2/" title="Tracking Events"
+  class="dd-item ">
+  <a href="/advanced-analytics-web-accelerator/tracking/tracking_2/">
+    Tracking Events
+    <i class="fas fa-check read-icon"></i>
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/advanced-analytics-web-accelerator/tracking/tracking_3/" title="Adding Context"
+  class="dd-item active">
+  <a href="/advanced-analytics-web-accelerator/tracking/tracking_3/">
+    Adding Context
+    <i class="fas fa-check read-icon"></i>
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/advanced-analytics-web-accelerator/tracking/tracking_4/" title="Testing"
+  class="dd-item ">
+  <a href="/advanced-analytics-web-accelerator/tracking/tracking_4/">
+    Testing
+    <i class="fas fa-check read-icon"></i>
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/advanced-analytics-web-accelerator/enrich/" title="Enrich" class="dd-item
+        
+        
+        
+        ">
+  <a href="/advanced-analytics-web-accelerator/enrich/">
+    <b>2. </b>Enrich
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/advanced-analytics-web-accelerator/enrich/enrich_1/" title="Add Enrichments"
+  class="dd-item ">
+  <a href="/advanced-analytics-web-accelerator/enrich/enrich_1/">
+    Add Enrichments
+    <i class="fas fa-check read-icon"></i>
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/advanced-analytics-web-accelerator/modelling/" title="Modelling" class="dd-item
+        
+        
+        
+        ">
+  <a href="/advanced-analytics-web-accelerator/modelling/">
+    <b>3. </b>Modelling
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/advanced-analytics-web-accelerator/modelling/modelling_1/" title="Install Snowplow dbt Package"
+  class="dd-item ">
+  <a href="/advanced-analytics-web-accelerator/modelling/modelling_1/">
+    Install Snowplow dbt Package
+    <i class="fas fa-check read-icon"></i>
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/advanced-analytics-web-accelerator/modelling/modelling_2/" title="Setup dbt Package"
+  class="dd-item ">
+  <a href="/advanced-analytics-web-accelerator/modelling/modelling_2/">
+    Setup dbt Package
+    <i class="fas fa-check read-icon"></i>
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/advanced-analytics-web-accelerator/modelling/modelling_3/" title="Testing"
+  class="dd-item ">
+  <a href="/advanced-analytics-web-accelerator/modelling/modelling_3/">
+    Testing
+    <i class="fas fa-check read-icon"></i>
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/advanced-analytics-web-accelerator/visualisation/" title="Visualisation" class="dd-item
+        
+        
+        
+        ">
+  <a href="/advanced-analytics-web-accelerator/visualisation/">
+    <b>4. </b>Visualisation
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/advanced-analytics-web-accelerator/visualisation/visualisation_1/" title="Setup"
+  class="dd-item ">
+  <a href="/advanced-analytics-web-accelerator/visualisation/visualisation_1/">
+    Setup
+    <i class="fas fa-check read-icon"></i>
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+    </ul>
+
+    
+    
+    <section id="shortcuts">
+      <h3>More</h3>
+      <ul>
+        
+        <li>
+          <a class="padding" href="https://try.snowplowanalytics.com/">Try Snowplow</a>
+        </li>
+        
+      </ul>
+    </section>
+    
+
+    
+    <section id="prefooter">
+      <hr />
+      <ul>
+        
+
+        
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+        
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/advanced-analytics-web-accelerator/'></a> > <a href='/advanced-analytics-web-accelerator/tracking/'>Tracking</a> > Adding Context
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Adding Context
+            </h1>
+          
+
+        
+
+
+<p>Whilst the tracking set up provides event data on user <strong>actions</strong> at a specific point in time, <strong>context</strong> describes the setting in which an event takes place. To describe the context of an event, we need to define and capture individual <strong>entities</strong>. For example:</p>
+<ul>
+<li>The user performing an action</li>
+<li>The web page the action occured on</li>
+<li>A product that has been interacted with</li>
+</ul>
+<p>Together, these entities make up the context of an event.</p>
+<p>Similar to the predefined events, a number of entities are available to implement out of the box including:</p>
+<ul>
+<li><strong>webPage Entity -</strong> Explanation?</li>
+<li><strong>session Entity -</strong> Information about the user session</li>
+<li><strong>performanceTiming Entity -</strong> Calculate page performance metrics</li>
+<li><strong>geolocation Entity -</strong> Information on the users location</li>
+</ul>
+
+
+<div class="tab-panel">
+    <div class="tab-nav">
+    
+        <button
+          data-tab-item="JS"
+          data-tab-group="select"
+          class="tab-nav-button btn active"
+          onclick="switchTab('select','JS')"
+         >JS</button>
+    
+        <button
+          data-tab-item="React"
+          data-tab-group="select"
+          class="tab-nav-button btn "
+          onclick="switchTab('select','React')"
+         >React</button>
+    
+        <button
+          data-tab-item="Angular"
+          data-tab-group="select"
+          class="tab-nav-button btn "
+          onclick="switchTab('select','Angular')"
+         >Angular</button>
+    
+    </div>
+    <div class="tab-content">
+        
+        <div data-tab-item="JS" data-tab-group="select" class="tab-item active">
+            <h4 id="step-1-enable-predefined-entities"><strong>Step 1:</strong> Enable Predefined Entities</h4>
+<p>The <code>webPage</code> entity is enabled by default in the JavaScript tracker. This is <strong>required</strong> for the dbt web model used in later steps.</p>
+<p>Enable the context by including the below context options in your tracker creation.</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.<span style="color:#a6e22e">snowplow</span>(<span style="color:#e6db74">&#39;newTracker&#39;</span>, <span style="color:#e6db74">&#39;sp&#39;</span>, <span style="color:#e6db74">&#39;{{Url for Collector}}&#39;</span>, { 
+</span></span><span style="display:flex;"><span>  ...    
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contexts</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">webPage</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>Each event sent with this tracker will now contain the data from each of these entities.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+        </div>
+        
+        <div data-tab-item="React" data-tab-group="select" class="tab-item ">
+            <h4 id="step-1-enable-predefined-entities"><strong>Step 1:</strong> Enable Predefined Entities</h4>
+<p>The <code>webPage</code> entity is enabled by default in the JavaScript tracker. This is <strong>required</strong> for the dbt web model used in later steps.</p>
+<p>Enable the context by including the below context options in your tracker creation.</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tracker</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newTracker</span>(<span style="color:#e6db74">&#39;sp&#39;</span>, <span style="color:#e6db74">&#39;{{Url for Collector}}&#39;</span>, { 
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contexts</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">webPage</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>Each event sent with this tracker will now contain the data from each of these entities.</p>
+
+        </div>
+        
+        <div data-tab-item="Angular" data-tab-group="select" class="tab-item ">
+            <h4 id="step-1-enable-predefined-entities"><strong>Step 1:</strong> Enable Predefined Entities</h4>
+<p>The <code>webPage</code> entity is enabled by default in the JavaScript tracker. This is <strong>required</strong> for the dbt web model used in later steps.</p>
+<p>Enable the context by including the below context options in your tracker creation.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SnowplowService</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tracker</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">BrowserTracker</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newTracker</span>(<span style="color:#e6db74">&#39;sp&#39;</span>, <span style="color:#e6db74">&#39;{{Url for Collector}}&#39;</span>, {
+</span></span><span style="display:flex;"><span>  ...    
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contexts</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">webPage</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">session</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>Each event sent with this tracker will now contain the data from each of these entities.</p>
+
+        </div>
+        
+    </div>
+</div>
+
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/tracking/tracking_2/" title="Tracking Events"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/tracking/tracking_4/" title="Testing" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1661164663"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1661164663"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1661164663"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1661164663"></script>
+    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1661164663"></script>
+    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1661164663"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1661164663"></script>
+    <script src="/advanced-analytics-web-accelerator/js/learn.js?1661164663"></script>
+    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1661164663"></script>
+    
+        
+            <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+

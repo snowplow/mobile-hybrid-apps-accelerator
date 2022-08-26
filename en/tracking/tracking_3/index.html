@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="description" content="Documentation for Hugo Learn Theme">
+<meta name="author" content="Mathieu Cornic">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Adding Context :: Documentation for Hugo Learn Theme</title>
+
+    
+    <link href="/css/nucleus.css?1660733184" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1660733184" rel="stylesheet">
+    <link href="/css/hybrid.css?1660733184" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1660733184" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1660733184" rel="stylesheet">
+    <link href="/css/auto-complete.css?1660733184" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1660733184" rel="stylesheet">
+    <link href="/css/theme.css?1660733184" rel="stylesheet">
+    <link href="/css/tabs.css?1660733184" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1660733184" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1660733184"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/en/tracking/tracking_3/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="/">
+    <div>SNOWPLOW</div>
+</a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1660733184"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1660733184"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/en";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1660733184"></script>
+
+    
+  </div>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/tracking/" title="Tracking" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/en/tracking/">
+          <b>1. </b>Tracking
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/tracking/tracking_1/" title="Getting Started" class="dd-item ">
+        <a href="/en/tracking/tracking_1/">
+        Getting Started
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/tracking/tracking_2/" title="Tracking Events" class="dd-item ">
+        <a href="/en/tracking/tracking_2/">
+        Tracking Events
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/tracking/tracking_3/" title="Adding Context" class="dd-item active">
+        <a href="/en/tracking/tracking_3/">
+        Adding Context
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/tracking/tracking_4/" title="Testing" class="dd-item ">
+        <a href="/en/tracking/tracking_4/">
+        Testing
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/modelling/" title="Modelling" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/modelling/">
+          <b>2. </b>Modelling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/matcornic/hugo-theme-learn"><i class='fab fa-fw fa-github'></i> GitHub repo</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="/en/showcase"><i class='fas fa-fw fa-camera'></i> Showcases</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://gohugo.io/"><i class='fas fa-fw fa-bookmark'></i> Hugo Documentation</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="en/credits"><i class='fas fa-fw fa-bullhorn'></i> Credits</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/en/tracking/tracking_3/" selected>English</option>
+                    
+                  
+              
+                  
+              
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/tracking/tracking_3.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/en/'>Advanced Analytics for Web</a> > <a href='/en/tracking/'>Tracking</a> > Adding Context
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#step-1-enable-predefined-entities"><strong>Step 1:</strong> Enable Predefined Entities</a></li>
+        <li><a href="#step-2-custom-entities"><strong>Step 2:</strong> Custom Entities</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Adding Context
+            </h1>
+          
+
+        
+
+
+<p>Whilst the tracking set up provides event data on user <strong>actions</strong> at a specific point in time, <strong>context</strong> describes the setting in which an event takes place. To describe the context of an event, we need to define and capture individual <strong>entities</strong>. For example:</p>
+<ul>
+<li>The user performing an action</li>
+<li>The web page the action occured on</li>
+<li>A product that has been interacted with</li>
+</ul>
+<p>Together, these entities make up the context of an event.</p>
+<p>Similar to the predefined events, a number of entities are available to implement out of the box including:</p>
+<ul>
+<li><strong>webPage Entity -</strong> Explanation?</li>
+<li><strong>session Entity -</strong> Information about the user session</li>
+<li><strong>performanceTiming Entity -</strong> Calculate page performance metrics</li>
+<li><strong>geolocation Entity -</strong> Information on the users location</li>
+</ul>
+<hr>
+<h3 id="step-1-enable-predefined-entities"><strong>Step 1:</strong> Enable Predefined Entities</h3>
+<p>The <code>webPage</code> entity is enabled by default in the JavaScript tracker.</p>
+<p>To enable <code>session</code>, <code>performanceTiming</code> and <code>geolocation</code> use the options below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.<span style="color:#a6e22e">snowplow</span>(<span style="color:#e6db74">&#39;newTracker&#39;</span>, <span style="color:#e6db74">&#39;sp&#39;</span>, <span style="color:#e6db74">&#39;{{Url for Collector}}&#39;</span>, { 
+</span></span><span style="display:flex;"><span>...    
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">contexts</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">webPage</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">session</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">performanceTiming</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">geolocation</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>Each event sent with this tracker will now contain the data from each of these entities.</p>
+<hr>
+<h3 id="step-2-custom-entities"><strong>Step 2:</strong> Custom Entities</h3>
+<p><strong>Do we want to do this?</strong>
+In addition to the out of the box entities, Snowplow lets you add custom entities to provide additional information surrounding an event.</p>
+<p>These are defined using JSON schemas uploaded to your iglu repository</p>
+<hr>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/en/tracking/tracking_2/" title="Tracking Events"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/en/tracking/tracking_4/" title="Testing" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1660733184"></script>
+    <script src="/js/perfect-scrollbar.min.js?1660733184"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1660733184"></script>
+    <script src="/js/jquery.sticky.js?1660733184"></script>
+    <script src="/js/featherlight.min.js?1660733184"></script>
+    <script src="/js/highlight.pack.js?1660733184"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1660733184"></script>
+    <script src="/js/learn.js?1660733184"></script>
+    <script src="/js/hugo-learn.js?1660733184"></script>
+    
+        
+            <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+

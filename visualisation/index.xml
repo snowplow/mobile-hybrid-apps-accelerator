@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visualisation on Advanced Analytics for Web</title>
+    <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/visualisation/</link>
+    <description>Recent content in Visualisation on Advanced Analytics for Web</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/visualisation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/visualisation/visualisation_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/visualisation/visualisation_1/</guid>
+      <description>There are a number of options to visualise your modelled data. We will explore a few ideas to get started.</description>
+    </item>
+    
+  </channel>
+</rss>

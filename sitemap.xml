@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/tracking/1-installation/</loc>
+  </url><url>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/tracking/</loc>
+  </url><url>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/tracking/2-mobile_trackers_usage/</loc>
+  </url><url>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modeling/</loc>
+  </url><url>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/tracking/3-webview_usage/</loc>
+  </url><url>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/</loc>
+    <priority>0</priority>
+  </url><url>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/categories/</loc>
+  </url><url>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/tags/</loc>
+  </url>
+</urlset>

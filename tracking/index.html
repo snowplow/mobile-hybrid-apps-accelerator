@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="description" content="Advanced Analytics for Web">
+<meta name="author" content="Agnes Kiss and Jack Keene">
+
+    <link rel="icon" href="/advanced-analytics-web-accelerator/images/favicon.png" type="image/png">
+
+    <title>Tracking :: Advanced Analytics for Web</title>
+
+    
+    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1661502060" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1661502060" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1661502060" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1661502060" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1661502060" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1661502060" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1661502060" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme.css?1661502060" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1661502060" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1661502060" rel="stylesheet">
+    
+    
+
+    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1661502060"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/advanced-analytics-web-accelerator/tracking/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator">
+    <img src="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/images/logo.png" />
+</a>
+    </div>
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'>Introduction</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/advanced-analytics-web-accelerator/tracking/" title="Tracking" class="dd-item
+        
+        active
+        
+        ">
+      <a href="/advanced-analytics-web-accelerator/tracking/">
+          <b>1. </b>Tracking
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced-analytics-web-accelerator/tracking/1-installation/" title="Installing the trackers" class="dd-item ">
+        <a href="/advanced-analytics-web-accelerator/tracking/1-installation/">
+        Installing the trackers
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced-analytics-web-accelerator/tracking/2-mobile_trackers_usage/" title="Configuring and using the iOS and Android trackers" class="dd-item ">
+        <a href="/advanced-analytics-web-accelerator/tracking/2-mobile_trackers_usage/">
+        Configuring and using the iOS and Android trackers
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced-analytics-web-accelerator/tracking/3-webview_usage/" title="Setting up tracking in Web views" class="dd-item ">
+        <a href="/advanced-analytics-web-accelerator/tracking/3-webview_usage/">
+        Setting up tracking in Web views
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/advanced-analytics-web-accelerator/modeling/" title="Modeling" class="dd-item
+        
+        
+        
+        ">
+      <a href="/advanced-analytics-web-accelerator/modeling/">
+          <b>2. </b>Modeling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://try.snowplowanalytics.com/">Try Snowplow</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/advanced-analytics-web-accelerator/'></a> > Tracking
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+          <div id="chapter">
+        
+        <div id="body-inner">
+          
+
+        
+
+
+
+	<p>Mobile hybrid apps implement some app logic in the platform native code (e.g., in Swift or Java) while some UI is implemented using embedded Web views.
+Since the two parts are developed using separate code bases, Snowplow events need to be tracked separately.</p>
+<p>The diagram below shows the interaction between different components in a hybrid app in relation to Snowplow event tracking.
+Events can be tracked from app logic both inside the Web view as well as the native code.
+Native code events are tracked using the <a href="https://github.com/snowplow/snowplow-objc-tracker">Snowplow iOS</a> or <a href="https://github.com/snowplow/snowplow-android-tracker">Android tracker</a> that sends them to the Snowplow Collector.
+Web view events are tracked using the <a href="https://github.com/snowplow-incubator/snowplow-webview-tracker">WebView tracker</a> that passes them to be tracked by the Snowplow iOS or Android tracker.</p>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">flowchart TB
+
+subgraph hybridApp[Hybrid Mobile App]
+
+    subgraph webView[Web View]
+        webViewCode[App logic]
+        webViewTracker[Snowplow WebView tracker]
+
+        webViewCode -- &#34;Tracks events&#34; --&gt; webViewTracker
+    end
+
+    subgraph nativeCode[Native Code]
+        nativeAppCode[App logic]
+        nativeTracker[Snowplow iOS/Android tracker]
+
+        nativeAppCode -- &#34;Tracks events&#34; --&gt; nativeTracker
+    end
+
+    webViewTracker -- &#34;Forwards events&#34; --&gt; nativeTracker
+end
+
+subgraph cloud[Cloud]
+    collector[Snowplow Collector]
+end
+
+nativeTracker -- &#34;Sends tracked events&#34; --&gt; collector
+</code></pre><p>This tutorial guides you to instrument Snowplow tracking in both the Web view and native mobile code and track events with consistent session and properties on both sides.
+It is structured in three parts:</p>
+<ol>
+<li><a href="1-installation.md">Installation</a> of the trackers in your apps.</li>
+<li><a href="2-mobile_trackers_usage.md">Instrumenting your native iOS or Android app</a> with the mobile trackers and setting up the Web view communication.</li>
+<li><a href="3-webview_usage.md">Tracking events from your Web view</a> with the WebView tracker.</li>
+</ol>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+            </div> 
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/" title=""> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/tracking/1-installation/" title="Installing the trackers" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1661502060"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1661502060"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1661502060"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1661502060"></script>
+    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1661502060"></script>
+    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1661502060"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1661502060"></script>
+    <script src="/advanced-analytics-web-accelerator/js/learn.js?1661502060"></script>
+    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1661502060"></script>
+    
+        
+            <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
