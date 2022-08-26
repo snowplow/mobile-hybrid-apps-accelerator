@@ -88,7 +88,7 @@ tracker.track(event);
 ## Subscribing to events from the Web view
 
 In addition to tracking events from the native code, we also want to track events from the Web view.
-In the [following section](3-webview_usage.md), we will explain how to instrument your Web application to use the WebView tracker.
+In the [following section]({{< ref "tracking/3-webview_usage.md" >}}), we will explain how to instrument your Web application to use the WebView tracker.
 However, in order for the events from the WebView tracker to arrive at the Snowplow Collector, it is necessary to subscribe the native mobile trackers to listen for messages from the Web view.
 
 You can call the `Snowplow.subscribeToWebViewEvents(webView)` function to subscribe to the messages (same on iOS and Android).

@@ -6,6 +6,8 @@ pre = "<b>1. </b>"
 post = ""
 +++
 
+# Tracking
+
 Mobile hybrid apps implement some app logic in the platform native code (e.g., in Swift or Java) while some UI is implemented using embedded Web views.
 Since the two parts are developed using separate code bases, Snowplow events need to be tracked separately.
 
@@ -14,7 +16,7 @@ Events can be tracked from app logic both inside the Web view as well as the nat
 Native code events are tracked using the [Snowplow iOS](https://github.com/snowplow/snowplow-objc-tracker) or [Android tracker](https://github.com/snowplow/snowplow-android-tracker) that sends them to the Snowplow Collector.
 Web view events are tracked using the [WebView tracker](https://github.com/snowplow-incubator/snowplow-webview-tracker) that passes them to be tracked by the Snowplow iOS or Android tracker.
 
-```mermaid
+{{<mermaid>}}
 flowchart TB
 
 subgraph hybridApp[Hybrid Mobile App]
@@ -41,11 +43,11 @@ subgraph cloud[Cloud]
 end
 
 nativeTracker -- "Sends tracked events" --> collector
-```
+{{<mermaid>}}
 
 This tutorial guides you to instrument Snowplow tracking in both the Web view and native mobile code and track events with consistent session and properties on both sides.
 It is structured in three parts:
 
-1. [Installation](1-installation.md) of the trackers in your apps.
-2. [Instrumenting your native iOS or Android app](2-mobile_trackers_usage.md) with the mobile trackers and setting up the Web view communication.
-3. [Tracking events from your Web view](3-webview_usage.md) with the WebView tracker.
+1. [Installation]({{< ref "tracking/1-installation.md" >}}) of the trackers in your apps.
+2. [Instrumenting your native iOS or Android app]({{< ref "tracking/2-mobile_trackers_usage.md" >}}) with the mobile trackers and setting up the Web view communication.
+3. [Tracking events from your Web view]({{< ref "tracking/3-webview_usage.md" >}}) with the WebView tracker.
