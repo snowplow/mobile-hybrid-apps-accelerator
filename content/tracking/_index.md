@@ -43,7 +43,7 @@ subgraph cloud[Cloud]
 end
 
 nativeTracker -- "Sends tracked events" --> collector
-{{<mermaid>}}
+{{</mermaid>}}
 
 This tutorial guides you to instrument Snowplow tracking in both the Web view and native mobile code and track events with consistent session and properties on both sides.
 It is structured in three parts:
