@@ -1,17 +1,19 @@
 on:
   push:
+    branches:
+      - main
 
 jobs:
-  confluence_job:
+  deploy:
     runs-on: ubuntu-latest
-    name: Build
+    name: Deploy to Github Pages
     steps:
       - name: Checkout template repo
         uses: actions/checkout@v3
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-          repository: snowplow-incubator/action-accelerator-web-ui
+          repository: snowplow-incubator/accelerator-web-ui-template
 
       - name: Checkout
         uses: actions/checkout@v3
