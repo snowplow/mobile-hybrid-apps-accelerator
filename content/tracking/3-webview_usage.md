@@ -1,7 +1,11 @@
-# Setting up tracking in Web views
++++
+title = "Setting up tracking in Web views"
+weight = 3
+post = ""
++++
 
-In the [Installation section](1-installation.md), you installed the [WebView tracker](https://github.com/snowplow-incubator/snowplow-webview-tracker) in your JavaScript Web app that is accessed in the mobile Web views.
-After that, you [learned how to](2-mobile_trackers_usage.md) configure and use the mobile trackers to track events and subscribe to events from Web views.
+In the [Installation section]({{< ref "tracking/1-installation.md" >}}), you installed the [WebView tracker](https://github.com/snowplow-incubator/snowplow-webview-tracker) in your JavaScript Web app that is accessed in the mobile Web views.
+After that, you [learned how to]({{< ref "tracking/2-mobile_trackers_usage.md" >}}) configure and use the mobile trackers to track events and subscribe to events from Web views.
 This section explains how to use the WebView tracker to track events inside Web views.
 
 ## Event tracking API
