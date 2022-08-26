@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on ${TITLE}</title>
-    <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/categories/</link>
+    <link>$%7BBASE_URL%7D/categories/</link>
     <description>Recent content in Categories on ${TITLE}</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language><atom:link href="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language><atom:link href="$%7BBASE_URL%7D/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
