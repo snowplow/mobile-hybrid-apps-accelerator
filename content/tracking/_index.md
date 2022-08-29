@@ -8,6 +8,12 @@ post = ""
 
 # Tracking
 
+{{<mermaid>}}
+flowchart LR
+    id1(Track)-->id2(Model)
+    style id1 fill:#f9f,stroke:#000,stroke-width:4px
+{{</mermaid >}}
+
 Mobile hybrid apps implement some app logic in the platform native code (e.g., in Swift or Java) while some UI is implemented using embedded Web views.
 Since the two parts are developed using separate code bases, Snowplow events need to be tracked separately.
 
