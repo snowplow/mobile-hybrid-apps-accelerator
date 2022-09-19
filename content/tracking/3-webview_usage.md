@@ -8,7 +8,7 @@ In the [Installation section]({{< ref "tracking/1-installation.md" >}}), you ins
 After that, you [learned how to]({{< ref "tracking/2-mobile_trackers_usage.md" >}}) configure and use the mobile trackers to track events and subscribe to events from Web views.
 This section explains how to use the WebView tracker to track events inside Web views.
 
-## Event tracking API
+#### Event tracking API
 
 The tracker provides a set of functions to manually track events.
 The functions range from single purpose ones, such as `trackScreenView`, to the more complex but flexible `trackSelfDescribingEvent`, which can be used to track any kind of user behaviour.
@@ -50,7 +50,7 @@ trackStructEvent(
 );
 ```
 
-## Track self-describing events with `trackSelfDescribingEvent`
+#### Track self-describing events with `trackSelfDescribingEvent`
 
 Use the `trackSelfDescribingEvent` function to track a custom event.
 This is the most advanced and powerful tracking method, which requires a certain amount of planning and infrastructure.
@@ -91,7 +91,7 @@ trackSelfDescribingEvent({
 });
 ```
 
-## Track structured events with `Structured`
+#### Track structured events with `Structured`
 
 This method provides a halfway-house between tracking fully user-defined self-describing events and out-of-the box predefined events.
 This event type can be used to track many types of user activity, as it is somewhat customizable.
@@ -121,7 +121,7 @@ trackStructEvent({
 });
 ```
 
-## Track screen views with `trackScreenView`
+#### Track screen views with `trackScreenView`
 
 Use `ScreenView` to track a user viewing a screen (or similar) within your app.
 This is the page view equivalent for apps that are not webpages.
@@ -153,7 +153,7 @@ trackScreenView({
 });
 ```
 
-## Track Web page views with `trackPageView`
+#### Track Web page views with `trackPageView`
 
 The `PageViewEvent` may be used to track page views on the Web.
 The event is designed to track web page views and automatically captures page title, referrer and URL.
@@ -170,7 +170,7 @@ For mobile apps we recommend using the mobile data model and tracking screen vie
 trackPageView();
 ```
 
-## Adding data to your events using context entities
+#### Adding data to your events using context entities
 
 Event context is an incredibly powerful aspect of Snowplow tracking, which allows you to create very rich data.
 It is based on the same self-describing JSON schemas as the self-describing events.

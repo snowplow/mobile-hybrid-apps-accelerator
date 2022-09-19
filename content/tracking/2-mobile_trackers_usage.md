@@ -13,10 +13,9 @@ They call the `Snowplow.createTracker()` function and pass it two required infor
 1. The tracker namespace which uniquely identifies the tracker within the app.
 2. Network configuration with the endpoint address of the Snowplow Collector (e.g., [Snowplow Micro](https://docs.snowplowanalytics.com/docs/understanding-your-pipeline/what-is-snowplow-micro/) or [Snowplow Mini](https://docs.snowplowanalytics.com/docs/understanding-your-pipeline/what-is-snowplow-mini/)) to send events to.
 
-<table><thead><tr>
-<th>iOS</th>
-<th>Android</th>
-</tr></thead><tbody><tr><td>
+{{< tabs groupId="platform" >}}
+
+{{% tab name="iOS" %}}
 
 ```swift
 import SnowplowTracker
@@ -29,7 +28,9 @@ let tracker = Snowplow.createTracker(
 );
 ```
 
-</td><td>
+{{% /tab %}}
+
+{{% tab name="Android" %}}
 
  ```java
 import com.snowplowanalytics.snowplow.Snowplow;
@@ -43,11 +44,12 @@ TrackerController tracker = Snowplow.createTracker(context,
 );
 ```
 
-</td></tr></tbody></table>
+{{% /tab %}}
+{{< /tabs >}}
 
 You can learn more about installing and configuring the mobile trackers in [the mobile tracker documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/mobile-trackers/mobile-trackers-v3-0/introduction/).
 
-## Tracking events in native code
+#### Tracking events in native code
 
 The initialized tracker instances can be used to track events in your native code.
 We won't go into detail on all the tracking features, but only give an example how to track self-describing events.
@@ -60,10 +62,9 @@ The schema value should point to a valid self-describing JSON schema.
 They are called self-describing because the schema will specify the fields allowed in the data value.
 Read more about how schemas are used with Snowplow [here](https://docs.snowplowanalytics.com/docs/understanding-tracking-design/understanding-schemas-and-validation/).
 
-<table><thead><tr>
-<th>iOS</th>
-<th>Android</th>
-</tr></thead><tbody><tr><td>
+{{< tabs groupId="platform" >}}
+
+{{% tab name="iOS" %}}
 
 ```swift
 let schema = "iglu:com.snowplowanalytics.snowplow/link_click/jsonschema/1-0-1"
@@ -72,7 +73,9 @@ let event = SelfDescribing(schema: schema, payload: data)
 tracker.track(event)
 ```
 
-</td><td>
+{{% /tab %}}
+
+{{% tab name="Android" %}}
 
  ```java
 String schema = "iglu:com.snowplowanalytics.snowplow/link_click/jsonschema/1-0-1";
@@ -83,9 +86,10 @@ SelfDescribing event = new SelfDescribing(sdj);
 tracker.track(event);
 ```
 
-</td></tr></tbody></table>
+{{% /tab %}}
+{{< /tabs >}}
 
-## Subscribing to events from the Web view
+#### Subscribing to events from the Web view
 
 In addition to tracking events from the native code, we also want to track events from the Web view.
 In the [following section]({{< ref "tracking/3-webview_usage.md" >}}), we will explain how to instrument your Web application to use the WebView tracker.
