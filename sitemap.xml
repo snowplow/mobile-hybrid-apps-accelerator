@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/tracking/1-installation/</loc>
-  </url><url>
-    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/tracking/</loc>
-  </url><url>
-    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/tracking/2-mobile_trackers_usage/</loc>
-  </url><url>
-    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/modeling/</loc>
-  </url><url>
-    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/tracking/3-webview_usage/</loc>
-  </url><url>
-    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/</loc>
-    <priority>0</priority>
-  </url><url>
-    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/categories/</loc>
-  </url><url>
-    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/tags/</loc>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/sitemap.xml</loc>
+    
+      <lastmod>2022-08-16T17:24:05+01:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/fr/sitemap.xml</loc>
+    
+  </sitemap>
+  
+</sitemapindex>
