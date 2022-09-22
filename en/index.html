@@ -12,22 +12,22 @@
     <title>Snowplow Hybrid Apps Accelerator | Snowplow Hybrid Apps Accelerator</title>
 
     
-    <link href="/snowplow-hybrid-apps-accelerator/css/nucleus.css?1663604083" rel="stylesheet">
-    <link href="/snowplow-hybrid-apps-accelerator/css/fontawesome-all.min.css?1663604083" rel="stylesheet">
-    <link href="/snowplow-hybrid-apps-accelerator/css/hybrid.css?1663604083" rel="stylesheet">
-    <link href="/snowplow-hybrid-apps-accelerator/css/featherlight.min.css?1663604083" rel="stylesheet">
-    <link href="/snowplow-hybrid-apps-accelerator/css/perfect-scrollbar.min.css?1663604083" rel="stylesheet">
-    <link href="/snowplow-hybrid-apps-accelerator/css/auto-complete.css?1663604083" rel="stylesheet">
-    <link href="/snowplow-hybrid-apps-accelerator/css/atom-one-dark-reasonable.css?1663604083" rel="stylesheet">
-    <link href="/snowplow-hybrid-apps-accelerator/css/theme.css?1663604083" rel="stylesheet">
-    <link href="/snowplow-hybrid-apps-accelerator/css/tabs.css?1663604083" rel="stylesheet">
-    <link href="/snowplow-hybrid-apps-accelerator/css/hugo-theme.css?1663604083" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/nucleus.css?1663860563" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/fontawesome-all.min.css?1663860563" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/hybrid.css?1663860563" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/featherlight.min.css?1663860563" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/perfect-scrollbar.min.css?1663860563" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/auto-complete.css?1663860563" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/atom-one-dark-reasonable.css?1663860563" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/theme.css?1663860563" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/tabs.css?1663860563" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/hugo-theme.css?1663860563" rel="stylesheet">
     
-    <link href="/snowplow-hybrid-apps-accelerator/css/theme-custom.css?1663604083" rel="stylesheet">
+    <link href="/snowplow-hybrid-apps-accelerator/css/theme-custom.css?1663860563" rel="stylesheet">
     
     
 
-    <script src="/snowplow-hybrid-apps-accelerator/js/jquery-3.3.1.min.js?1663604083"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/jquery-3.3.1.min.js?1663860563"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -38,6 +38,30 @@
     
   </head>
   <body class="" data-url="/snowplow-hybrid-apps-accelerator/en/">
+    <script type="text/javascript" async=1 >
+      ;(function (p, l, o, w, i, n, g) { if (!p[i]) { p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || []; p.GlobalSnowplowNamespace.push(i); p[i] = function () { (p[i].q = p[i].q || []).push(arguments) }; p[i].q = p[i].q || []; n = l.createElement(o); g = l.getElementsByTagName(o)[0]; n.async = 1; n.src = w; g.parentNode.insertBefore(n, g) } }(window, document, "script", "https:\/\/snowplow-incubator.github.io\/snowplow-hybrid-apps-accelerator\/js/sp.js", "snowplow"));
+      
+      const trackerConfig = {
+        appId: 'accelerator',
+        cookieDomain: `.snowplow.io`,
+        cookieName: '_sp5_',
+        contexts: {
+          webPage: true,
+        },
+      }
+    
+      window.snowplow('newTracker', 'snplow5', 'collector.snowplow.io', trackerConfig);
+
+      window.snowplow('newTracker', 'biz1', 'c.snowplow.io', trackerConfig)
+
+      snowplow('enableActivityTracking', {
+        minimumVisitLength: 10,
+        heartbeatDelay: 10
+      });
+
+      snowplow('trackPageView')
+
+    </script>
     
 
 <div id="header-wrapper">
@@ -1074,16 +1098,16 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/snowplow-hybrid-apps-accelerator/js/clipboard.min.js?1663604083"></script>
-    <script src="/snowplow-hybrid-apps-accelerator/js/perfect-scrollbar.min.js?1663604083"></script>
-    <script src="/snowplow-hybrid-apps-accelerator/js/perfect-scrollbar.jquery.min.js?1663604083"></script>
-    <script src="/snowplow-hybrid-apps-accelerator/js/jquery.sticky.js?1663604083"></script>
-    <script src="/snowplow-hybrid-apps-accelerator/js/featherlight.min.js?1663604083"></script>
-    <script src="/snowplow-hybrid-apps-accelerator/js/highlight.pack.js?1663604083"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/clipboard.min.js?1663860563"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/perfect-scrollbar.min.js?1663860563"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/perfect-scrollbar.jquery.min.js?1663860563"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/jquery.sticky.js?1663860563"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/featherlight.min.js?1663860563"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/highlight.pack.js?1663860563"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/snowplow-hybrid-apps-accelerator/js/modernizr.custom-3.6.0.js?1663604083"></script>
-    <script src="/snowplow-hybrid-apps-accelerator/js/learn.js?1663604083"></script>
-    <script src="/snowplow-hybrid-apps-accelerator/js/hugo-learn.js?1663604083"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/modernizr.custom-3.6.0.js?1663860563"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/learn.js?1663860563"></script>
+    <script src="/snowplow-hybrid-apps-accelerator/js/hugo-learn.js?1663860563"></script>
     
         
             <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>
