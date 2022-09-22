@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Next steps on Snowplow Hybrid Apps Accelerator</title>
-    <link>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/next_steps/</link>
+    <link>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/next_steps/</link>
     <description>Recent content in Next steps on Snowplow Hybrid Apps Accelerator</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language><atom:link href="https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/next_steps/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language><atom:link href="https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/next_steps/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Model your pipeline data</title>
-      <link>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/next_steps/1-run_model/</link>
+      <link>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/next_steps/1-run_model/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/next_steps/1-run_model/</guid>
+      <guid>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/next_steps/1-run_model/</guid>
       <description>At this stage you should:
 Have tracking set-up Have some data in the ATOMIC.EVENTS table Have a working dbt project with the mobile model configurations for the sample data Step 1: Complete refresh of your Snowplow mobile package (Optional) If you would like to use your current dbt environment that you set-up during modelling the sample data you might want to start from scratch.
 While you can drop and recompute the incremental tables within this package using the standard --full-refresh flag, all manifest tables are protected from being dropped in production.</description>
@@ -19,10 +19,10 @@ While you can drop and recompute the incremental tables within this package usin
     
     <item>
       <title>Custom models</title>
-      <link>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/next_steps/2-custom_models/</link>
+      <link>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/next_steps/2-custom_models/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/next_steps/2-custom_models/</guid>
+      <guid>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/next_steps/2-custom_models/</guid>
       <description>If you have got to this stage, congratulations! You are ready to take action and use your Snowplow generated data to help your business grow.
 As a next step you might want to check out our detailed guide on how to create custom models to adjust the snowplow-mobile data model to your own needs if the out-of-the box solution does not fully fit your needs.</description>
     </item>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Upload sample data on Snowplow Hybrid Apps Accelerator</title>
-    <link>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/upload/</link>
+    <link>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/upload/</link>
     <description>Recent content in Upload sample data on Snowplow Hybrid Apps Accelerator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 16 Aug 2022 17:24:05 +0100</lastBuildDate><atom:link href="https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/upload/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Aug 2022 17:24:05 +0100</lastBuildDate><atom:link href="https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/upload/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Data upload</title>
-      <link>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/upload/1-upload/</link>
+      <link>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/upload/1-upload/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/upload/1-upload/</guid>
+      <guid>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/upload/1-upload/</guid>
       <description>There are a number of options to load the sample Snowplow data to your Snowflake warehouse. Select the most suitable for your project below.
 Attachments upload.zip (118 KB) Python Snowflake Web Interface Download the upload.zip folder which contains the sample_events.csv and the snowflake_upload.py files. You will need both to load the sample data to the Snowflake warehouse with Python.
 Step 1: Set up your environment Set up a virtual environment (recommended) and install the snowflake-connector-python package (tested with version 2.</description>

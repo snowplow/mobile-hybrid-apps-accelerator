@@ -2,40 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/fr/</loc>
+    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/fr/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/"
+                href="https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/fr/"
+                href="https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/fr/"
                 />
   </url><url>
-    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/fr/categories/</loc>
+    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/fr/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/categories/"
+                href="https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/fr/categories/"
+                href="https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/fr/categories/"
                 />
   </url><url>
-    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/fr/tags/</loc>
+    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/fr/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/tags/"
+                href="https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/fr/tags/"
+                href="https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/fr/tags/"
                 />
   </url>
 </urlset>
