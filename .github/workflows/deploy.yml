@@ -28,7 +28,7 @@ jobs:
         env:
           TITLE: Snowplow Hybrid Apps Accelerator
           DESCRIPTION: Tutorial for setting up tracking in mobile hybrid apps
-          BASE_URL: https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/
+          BASE_URL: https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/
           AUTHOR: Matus Tomlein
           LANDING_PAGE_URL: /snowplow-hybrid-apps-accelerator/en/introduction
         run: |
