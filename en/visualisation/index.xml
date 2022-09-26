@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Visualisation on Snowplow Hybrid Apps Accelerator</title>
-    <link>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/visualisation/</link>
+    <link>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/visualisation/</link>
     <description>Recent content in Visualisation on Snowplow Hybrid Apps Accelerator</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language><atom:link href="https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/visualisation/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language><atom:link href="https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/visualisation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Streamlit</title>
-      <link>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/visualisation/1-streamlit/</link>
+      <link>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/visualisation/1-streamlit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/visualisation/1-streamlit/</guid>
+      <guid>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/visualisation/1-streamlit/</guid>
       <description>Streamlit uses Python to build shareable dashboards without the need for front-end development experience.
 Download the streamlit-visualisation project template and copy the unzipped folder to your project directory to get started.
 Attachments streamlit-project-mobile.zip (39 KB) Step 1: Install requirements Run the command below to install the project requirements and run the virtual environment
