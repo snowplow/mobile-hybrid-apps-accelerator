@@ -2,61 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/introduction/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/introduction/</loc>
   </url><url>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/upload/1-upload/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/upload/1-upload/</loc>
   </url><url>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/modeling/1-installation/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/modeling/1-installation/</loc>
   </url><url>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/tracking/1-installation/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/tracking/1-installation/</loc>
   </url><url>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/next_steps/1-run_model/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/next_steps/1-run_model/</loc>
   </url><url>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/visualisation/1-streamlit/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/visualisation/1-streamlit/</loc>
   </url><url>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/upload/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/upload/</loc>
     <lastmod>2022-08-16T17:24:05+01:00</lastmod>
   </url><url>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/tracking/2-mobile_trackers_usage/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/tracking/2-mobile_trackers_usage/</loc>
   </url><url>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/modeling/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/modeling/</loc>
   </url><url>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/modeling/2-run/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/modeling/2-run/</loc>
   </url><url>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/next_steps/2-custom_models/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/next_steps/2-custom_models/</loc>
   </url><url>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/modeling/3-test/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/modeling/3-test/</loc>
   </url><url>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/tracking/3-webview_usage/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/tracking/3-webview_usage/</loc>
   </url><url>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/visualisation/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/visualisation/</loc>
   </url><url>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/tracking/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/tracking/</loc>
   </url><url>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/next_steps/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/next_steps/</loc>
   </url><url>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/categories/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/fr/categories/"
+                href="https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/fr/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/categories/"
+                href="https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/categories/"
                 />
   </url><url>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/tags/</loc>
+    <loc>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/fr/tags/"
+                href="https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/fr/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/tags/"
+                href="https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/tags/"
                 />
   </url>
 </urlset>

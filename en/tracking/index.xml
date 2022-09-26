@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tracking on Snowplow Hybrid Apps Accelerator</title>
-    <link>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/tracking/</link>
+    <link>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/tracking/</link>
     <description>Recent content in Tracking on Snowplow Hybrid Apps Accelerator</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language><atom:link href="https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/tracking/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language><atom:link href="https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/tracking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Installing the trackers</title>
-      <link>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/tracking/1-installation/</link>
+      <link>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/tracking/1-installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/tracking/1-installation/</guid>
+      <guid>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/tracking/1-installation/</guid>
       <description>To instrument tracking, you will need to install tracker libraries both in the Web view as well as the native mobile app.
 Snowplow WebView tracker installation To install the WebView tracker in your JavaScript or TypeScript app, add the npm package:
 npm install --save @snowplow/webview-tracker You will then be able to use the functions provided by the WebView tracker as follows:
@@ -20,10 +20,10 @@ import { trackSelfDescribingEvent } from &amp;#39;@snowplow/webview-tracker&amp;
     
     <item>
       <title>Configuring and using the iOS and Android trackers</title>
-      <link>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/tracking/2-mobile_trackers_usage/</link>
+      <link>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/tracking/2-mobile_trackers_usage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/tracking/2-mobile_trackers_usage/</guid>
+      <guid>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/tracking/2-mobile_trackers_usage/</guid>
       <description>Having installed the tracker dependencies, the next step is to initialize the tracker instances in your app. Tracker instances are initialized given configuration that includes network settings, tracker feature settings, session settings, and more.
 The following snippets show how to initialize tracker instances using the default settings. They call the Snowplow.createTracker() function and pass it two required information:
 The tracker namespace which uniquely identifies the tracker within the app. Network configuration with the endpoint address of the Snowplow Collector (e.</description>
@@ -31,10 +31,10 @@ The tracker namespace which uniquely identifies the tracker within the app. Netw
     
     <item>
       <title>Setting up tracking in Web views</title>
-      <link>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/tracking/3-webview_usage/</link>
+      <link>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/tracking/3-webview_usage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/tracking/3-webview_usage/</guid>
+      <guid>https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/en/tracking/3-webview_usage/</guid>
       <description>In the Installation section, you installed the WebView tracker in your JavaScript Web app that is accessed in the mobile Web views. After that, you learned how to configure and use the mobile trackers to track events and subscribe to events from Web views. This section explains how to use the WebView tracker to track events inside Web views.
 Event tracking API The tracker provides a set of functions to manually track events.</description>
     </item>
