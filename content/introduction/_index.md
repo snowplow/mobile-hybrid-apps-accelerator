@@ -6,8 +6,8 @@ weight = 1
 post = ""
 
 aliases = [
-    "/en/",
-    "/en/introduction/"
+    "/en",
+    "/en/introduction"
 ]
 +++
 
