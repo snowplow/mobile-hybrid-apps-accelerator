@@ -11,7 +11,7 @@ The following snippets show how to initialize tracker instances using the defaul
 They call the `Snowplow.createTracker()` function and pass it two required information:
 
 1. The tracker namespace which uniquely identifies the tracker within the app.
-2. Network configuration with the endpoint address of the Snowplow Collector (e.g., [Snowplow Micro](https://docs.snowplowanalytics.com/docs/understanding-your-pipeline/what-is-snowplow-micro/) or [Snowplow Mini](https://docs.snowplowanalytics.com/docs/understanding-your-pipeline/what-is-snowplow-mini/)) to send events to.
+2. Network configuration with the endpoint address of the Snowplow Collector (e.g. [Snowplow Micro](https://docs.snowplowanalytics.com/docs/understanding-your-pipeline/what-is-snowplow-micro/) or [Snowplow Mini](https://docs.snowplowanalytics.com/docs/understanding-your-pipeline/what-is-snowplow-mini/)) to send events to.
 
 {{< tabs groupId="platform" >}}
 

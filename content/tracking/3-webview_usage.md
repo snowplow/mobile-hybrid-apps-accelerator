@@ -97,7 +97,7 @@ This method provides a halfway-house between tracking fully user-defined self-de
 This event type can be used to track many types of user activity, as it is somewhat customizable.
 "Struct" events closely mirror the structure of Google Analytics events, with "category", "action", "label", and "value" properties.
 
-As these fields are fairly arbitrary, we recommend following the advice in this table how to define structured events.
+As these fields are fairly arbitrary, we recommend following the advice in this table on how to define structured events.
 It's important to be consistent throughout the business about how each field is used.
 
 | Argument   | Description                                                    | Required? |

@@ -18,7 +18,7 @@ flowchart LR
     style id2 fill:#f5f5f5,stroke:#333,stroke-width:1px
 {{</mermaid >}}
 
-Mobile hybrid apps implement some app logic in the platform native code (e.g., in Swift or Java) while some UI is implemented using embedded Web views.
+Mobile hybrid apps implement some app logic in the platform native code (e.g. in Swift or Java) while some UI is implemented using embedded Web views.
 Since the two parts are developed using separate code bases, Snowplow events need to be tracked separately.
 
 This part guides you to instrument Snowplow tracking in both the Web view and native mobile code and track events with consistent session and properties on both sides.

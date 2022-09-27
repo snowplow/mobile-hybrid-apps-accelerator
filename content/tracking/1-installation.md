@@ -27,7 +27,7 @@ All configuration is done in the native layer as explained next.
 
 First, you will need to install the Snowplow tracker package in your app.
 Below, we show how to do so using the Swift Package Manager (SPM) on iOS and Gradle on Android.
-To learn about other options for installing the trackers (e.g., using CocoaPods or Carthage on iOS), [see the mobile tracker documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/mobile-trackers/mobile-trackers-v3-0/quick-start-guide/).
+To learn about other options for installing the trackers (e.g. using CocoaPods or Carthage on iOS), [see the mobile tracker documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/mobile-trackers/mobile-trackers-v3-0/quick-start-guide/).
 
 {{< tabs groupId="platform" >}}
 

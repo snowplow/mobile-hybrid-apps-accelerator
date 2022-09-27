@@ -29,8 +29,8 @@ Here you will learn to:
 ***
 
 Hybrid apps are mobile apps that in addition to a native interface, provide part of the UI through an embedded Web view.
-Snowplow events are tracked from both the native code (e.g., written in Swift or Kotlin) as well as the Web view (in JavaScript).
-Our goal is to have both events tracked from the native code as well as the Web view share the same session and appear as tracked with the same tracker.
+Snowplow events are tracked from both the native code (e.g. written in Swift or Kotlin) as well as the Web view (in JavaScript).
+Our goal is to have both events tracked from the native code as well as the Web view, share the same session and appear as tracked with the same tracker.
 
 #### System overview
 
