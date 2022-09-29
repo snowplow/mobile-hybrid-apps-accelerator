@@ -1,5 +1,5 @@
 +++
-title = "Advanced Analytics for Hybrid Mobile Apps"
+title = "Mobile & Hybrid App Analytics"
 menuTitle="Introduction"
 chapter = false
 weight = 1
@@ -15,7 +15,7 @@ aliases = [
 
 #### Introduction
 
-Welcome to the **Advanced Analytics for Hybrid Mobile Apps** accelerator. Once finished, you will be able to build a deeper understanding of customer behaviour on your mobile apps and use your data to influence business decisions.
+Welcome to the **Mobile & Hybrid App Analytics** accelerator. Once finished, you will be able to build a deeper understanding of customer behaviour on your mobile apps and use your data to influence business decisions.
 
 Here you will learn to:
 
