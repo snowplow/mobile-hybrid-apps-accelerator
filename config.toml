@@ -1,0 +1,5 @@
+title = "Mobile & Hybrid App Analytics"
+
+[params]
+  description = "Tutorial for setting up Snowplow for mobile hybrid apps"
+  author = "Snowplow"

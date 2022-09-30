@@ -1,0 +1,21 @@
+[build]
+publish = 'public'
+command = './scripts/build.sh'
+[build.environment]
+HUGO_VERSION = '0.104.1'
+
+[context.production]
+[context.production.environment]
+HUGO_ENV = 'production'
+
+[[redirects]]
+from = "/"
+to = "/introduction"
+status = 301
+force = true
+
+[[redirects]]
+# redirect from language specific page following restructure
+from = "/en/introduction"
+to = "/introduction"
+status = 301
