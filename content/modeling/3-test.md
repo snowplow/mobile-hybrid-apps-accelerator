@@ -14,7 +14,7 @@ Head to the SQL editor of your choice (e.g.: Snowflake Web UI) to check the mode
 
 1. [your_custom_schema]_***scratch***: drop and recompute models that aid the incremental run
 2. [your_custom_schema]_***derived***: main output models you can use in your downstream models and reporting
-3. [your_custom_schema]_***manifest***: tables that help the integrity and core incremental logic of the model
+3. [your_custom_schema]_***snowplow_manifest***: tables that help the integrity and core incremental logic of the model
 
 ***
 
