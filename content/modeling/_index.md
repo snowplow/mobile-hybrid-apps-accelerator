@@ -2,16 +2,22 @@
 title = "Modeling"
 chapter = true
 weight = 2
-pre = "<b>2. </b>"
+pre = "2. "
 post = ""
 +++
 
-# Modeling
+# Modeling your Data
 
 {{<mermaid>}}
 flowchart LR
-    id1(Track)-->id2(Model)
-    style id2 fill:#f9f,stroke:#000,stroke-width:4px
+    id1(Upload)-->id2(Model)-->id3(Visualise)-->id4(Track)-->id5(Next steps)
+    style id2 fill:#f5f5f5,stroke:#6638B8,stroke-width:3px
+    style id1 fill:#f5f5f5,stroke:#333,stroke-width:1px
+    style id4 fill:#f5f5f5,stroke:#333,stroke-width:1px
+    style id5 fill:#f5f5f5,stroke:#333,stroke-width:1px
+    style id3 fill:#f5f5f5,stroke:#333,stroke-width:1px
 {{</mermaid >}}
 
-We are actively working on this part of the tutorial. Meanwhile, please refer to the [mobile data model documentation](https://docs.snowplowanalytics.com/docs/modeling-your-data/the-snowplow-mobile-data-model/dbt-mobile-data-model/).
+The [snowplow-mobile dbt package](https://hub.getdbt.com/snowplow/snowplow_mobile/latest/) transforms and aggregates the raw mobile event data collected from the Snowplow mobile trackers (e.g. the [Android tracker](https://github.com/snowplow/snowplow-android-tracker), [iOS tracker](https://github.com/snowplow/snowplow-objc-tracker), [React Native tracker](https://github.com/snowplow/snowplow-react-native-tracker)) into a set of derived tables: *screen views, sessions, users* and *user mappings*. Modeling the data makes it easier to digest and derive business value from the Snowplow data either through AI or BI.
+
+In this chapter you will learn how to set-up an run the snowplow-mobile package to model the sample data.

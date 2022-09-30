@@ -26,11 +26,11 @@ jobs:
 
       - name: Replace configuration placeholders
         env:
-          TITLE: Snowplow Hybrid Apps Accelerator
+          TITLE: Mobile & Hybrid App Analytics
           DESCRIPTION: Tutorial for setting up tracking in mobile hybrid apps
-          BASE_URL: https://snowplow-incubator.github.io/snowplow-hybrid-apps-accelerator/
+          BASE_URL: https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/
           AUTHOR: Matus Tomlein
-          LANDING_PAGE_URL: /snowplow-hybrid-apps-accelerator
+          LANDING_PAGE_URL: /snowplow-hybrid-apps-accelerator/en/introduction
         run: |
           sed -i 's|ACCELERATOR_TITLE|${{ env.TITLE }}|g' config.toml
           sed -i 's|ACCELERATOR_DESCRIPTION|${{ env.DESCRIPTION }}|g' config.toml
