@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> | </title>
+    <title>Next steps | </title>
 
     
     <link href="/css/nucleus.css?1664530343" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/next_steps/">
     <script type="text/javascript" async=1 >
       ;(function (p, l, o, w, i, n, g) { if (!p[i]) { p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || []; p.GlobalSnowplowNamespace.push(i); p[i] = function () { (p[i].q = p[i].q || []).push(arguments) }; p[i].q = p[i].q || []; n = l.createElement(o); g = l.getElementsByTagName(o)[0]; n.async = 1; n.src = w; g.parentNode.insertBefore(n, g) } }(window, document, "script", "/js/3.6.0/9LZR5r.js", "snowplow"));
       
@@ -595,7 +595,7 @@
 
 <li data-nav-id="/next_steps/" title="Next steps" class="dd-item
         
-        
+        active
         
         ">
   <a href="/next_steps/">
@@ -726,32 +726,78 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+               
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> / Next steps
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
+        
+          <div id="chapter">
         
         <div id="body-inner">
           
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
-           
+
+	<!-- raw HTML omitted -->
+<h1 id="next-steps">Next steps</h1>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true });
+</script>
+
+<div class="mermaid" align="center">
+    
+flowchart LR
+    id1(Upload)-->id2(Model)-->id3(Visualise)-->id4(Track)-->id5(Next steps)
+    style id5 fill:#f5f5f5,stroke:#6638B8,stroke-width:3px
+    style id1 fill:#f5f5f5,stroke:#333,stroke-width:1px
+    style id3 fill:#f5f5f5,stroke:#333,stroke-width:1px
+    style id4 fill:#f5f5f5,stroke:#333,stroke-width:1px
+    style id2 fill:#f5f5f5,stroke:#333,stroke-width:1px
+
+</div>
+<p>Now that you have set-up tracking and enrichment on your pipeline and generated some test events it is time to make use of what you have learned so far by modelling and visualising your own pipeline data.</p>
+
+
+
+
+
+<footer class=" footline" >
 	
-		<h1>Customize your own home page</h1>
-		<p>
-		  The site is working. Don't forget to customize this homepage with your own. You typically have 3 choices :
-		</p>
-		<ul>
-			<li><b>1. </b> Create an _index.md document in <b>content</b> folder and fill it with Markdown content</li>
-			<li><b>2. </b> Create an <b>index.html</b> file in the <b>static</b> folder and fill the file with HTML content</li>
-		  <li><b>3. </b> Configure your server to automatically redirect home page to one your documentation page</li>
-		</ul>
-	
-  
+</footer>
+
+        
+            </div> 
         
         </div>
         
@@ -994,6 +1040,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1006,6 +1053,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1046,8 +1096,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/tracking/3-webview_usage/" title="Setting up tracking in Web views"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/introduction/" title="Mobile &amp; Hybrid App Analytics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/next_steps/1-run_model/" title="Model your pipeline data" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1079,4 +1131,3 @@
 
   </body>
 </html>
-

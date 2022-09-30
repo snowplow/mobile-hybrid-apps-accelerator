@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> | </title>
+    <title>Mobile &amp; Hybrid App Analytics | </title>
 
     
     <link href="/css/nucleus.css?1664530343" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/introduction/">
     <script type="text/javascript" async=1 >
       ;(function (p, l, o, w, i, n, g) { if (!p[i]) { p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || []; p.GlobalSnowplowNamespace.push(i); p[i] = function () { (p[i].q = p[i].q || []).push(arguments) }; p[i].q = p[i].q || []; n = l.createElement(o); g = l.getElementsByTagName(o)[0]; n.async = 1; n.src = w; g.parentNode.insertBefore(n, g) } }(window, document, "script", "/js/3.6.0/9LZR5r.js", "snowplow"));
       
@@ -178,7 +178,7 @@
 
 <li data-nav-id="/introduction/" title="Mobile &amp; Hybrid App Analytics" class="dd-item
         
-        
+        active
         
         ">
   <a href="/introduction/">
@@ -726,32 +726,221 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+               
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> / Mobile & Hybrid App Analytics
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Mobile &amp; Hybrid App Analytics
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
-           
+
+	<p><img src="images/logo_banner.png" alt="&amp;rsquo;logo-banner&amp;rsquo;"></p>
+<h4 id="introduction">Introduction</h4>
+<p>Welcome to the <strong>Mobile &amp; Hybrid App Analytics</strong> accelerator. Once finished, you will be able to build a deeper understanding of customer behaviour on your mobile apps and use your data to influence business decisions.</p>
+<p>Here you will learn to:</p>
+<ul>
+<li>Model and Visualise Snowplow data
+<ul>
+<li>using the <a href="https://hub.getdbt.com/snowplow/snowplow_mobile/latest/">snowplow-mobile</a> dbt package and Streamlit</li>
+<li>using our sample data for Snowflake (no need to have a working pipeline)</li>
+</ul>
+</li>
+<li>Set-up Snowplow Tracking in a hybrid mobile app
+<ul>
+<li>track events both from a native iOS/Android code as well as embedded Web views</li>
+</ul>
+</li>
+<li>Apply what you have learned on your own pipeline to gain insights</li>
+</ul>
+<hr>
+<p>Hybrid apps are mobile apps that in addition to a native interface, provide part of the UI through an embedded Web view.
+Snowplow events are tracked from both the native code (e.g. written in Swift or Kotlin) as well as the Web view (in JavaScript).
+Our goal is to have both events tracked from the native code as well as the Web view, share the same session and appear as tracked with the same tracker.</p>
+<h4 id="system-overview">System overview</h4>
+<p>The diagram below gives a complete overview of the system covered in this accelerator:</p>
+<ol>
+<li>Events are tracked from app logic both inside the <strong>Web view</strong> as well as the <strong>native app code</strong>.
+<ul>
+<li>Native code events are tracked using the <a href="https://github.com/snowplow/snowplow-objc-tracker">Snowplow iOS</a> or <a href="https://github.com/snowplow/snowplow-android-tracker">Android tracker</a>.</li>
+<li>Web view events are tracked using the <a href="https://github.com/snowplow-incubator/snowplow-webview-tracker">WebView tracker</a> that passes them to be tracked by the Snowplow iOS or Android tracker.</li>
+</ul>
+</li>
+<li>Tracked events are loaded into a <strong>Snowflake warehouse</strong> by the Snowplow BDP or Open Source Cloud.</li>
+<li>The raw events are <strong>modeled into higher level entities</strong> such as screen views, sessions, or users using the <a href="https://docs.snowplowanalytics.com/docs/modeling-your-data/the-snowplow-mobile-data-model/dbt-mobile-data-model/">snowplow-mobile</a> dbt package.</li>
+<li>Finally, we <strong>visualize</strong> the modeled data using Streamlit.</li>
+</ol>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true });
+</script>
+
+<div class="mermaid" align="center">
+    
+flowchart TB
+
+subgraph hybridApp[Hybrid Mobile App]
+
+    subgraph webView[Web View]
+        webViewCode[App logic]
+        webViewTracker[Snowplow WebView tracker]
+
+        webViewCode -- "Tracks events" --> webViewTracker
+
+        style webViewTracker fill:#f5f5f5,stroke:#6638B8,stroke-width:3px
+        click webViewTracker "https://github.com/snowplow-incubator/snowplow-webview-tracker" "Open tracker package" _blank
+    end
+
+    subgraph nativeCode[Native iOS/Android]
+        nativeAppCode[App logic]
+        nativeTracker[Snowplow iOS/Android tracker]
+
+        nativeAppCode -- "Tracks events" --> nativeTracker
+
+        style nativeTracker fill:#f5f5f5,stroke:#6638B8,stroke-width:3px
+        click nativeTracker "https://docs.snowplow.io/docs/collecting-data/collecting-from-own-applications/mobile-trackers/installation-and-set-up/" "Open tracker docs" _blank
+    end
+
+    webViewTracker -- "Forwards events" --> nativeTracker
+end
+
+subgraph cloud[Cloud]
+    snowplow[Snowplow BDP/OS Cloud]
+    snowflake[(Snowflake)]
+    dbt[snowplow-mobile dbt package]
+    streamlit[Streamlit]
+
+    snowplow -- "Loads raw events" --> snowflake
+    dbt -- "Models data" --> snowflake
+    streamlit -- "Visualises modeled data" --> snowflake
+
+    style dbt fill:#f5f5f5,stroke:#6638B8,stroke-width:3px
+    click dbt "https://docs.snowplowanalytics.com/docs/modeling-your-data/the-snowplow-mobile-data-model/dbt-mobile-data-model/" "Open dbt package" _blank
+    click snowplow "https://snowplow.io/snowplow-bdp/" "Snowplow BDP" _blank
+end
+
+nativeTracker -- "Sends tracked events" --> snowplow
+
+</div>
+<hr>
+<h4 id="who-is-this-guide-for">Who is this guide for?</h4>
+<ul>
+<li>Data practitioners who would like to get familiar with Snowplow data.</li>
+<li>Data practitioners who would like to set up tracking in a mobile hybrid app and learn how to use the Snowplow mobile data model to gain insight from their customers&rsquo; behavioural data as quickly as possible.</li>
+</ul>
+<hr>
+<h4 id="what-you-will-learn">What you will learn</h4>
+<p>In approximately 2 working days (~13 working hours) you can achieve the following:</p>
+<ul>
+<li><strong>Upload data -</strong> Upload a sample Snowplow events dataset to your Snowflake warehouse</li>
+<li><strong>Model -</strong> Configure and run the snowplow-mobile data model</li>
+<li><strong>Visualise -</strong> Visualise the modeled data with Streamlit</li>
+<li><strong>Track -</strong> Set-up and deploy tracking to your hybrid mobile app</li>
+<li><strong>Next steps -</strong> Gain value from your own pipeline data through modeling and visualisation</li>
+</ul>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true });
+</script>
+
+<div class="mermaid" align="center">
+    
+gantt
+        dateFormat  HH-mm
+        axisFormat %M
+        section 1. Upload
+        1h          :upload, 00-00, 1m
+        section 2. Model
+        2h          :model, after upload, 2m
+        section 3. Visualise
+        3h          :visualise, after model, 3m
+        section 4. Track
+        6h          :track, after visualise, 6m
+        section 5. Next steps
+        1h          :next steps, after track, 2m
+
+
+</div>
+<hr>
+<h4 id="prerequisites">Prerequisites</h4>
+<p><strong>Modeling and Visualisation</strong></p>
+<ul>
+<li>dbt CLI installed / dbt Cloud account available
+<ul>
+<li>New dbt project created and configured</li>
+</ul>
+</li>
+<li>Python 3 Installed</li>
+<li>Snowflake account and a user with access to create schemas and tables</li>
+</ul>
+<p><strong>Tracking</strong></p>
+<ul>
+<li>Snowplow pipeline</li>
+<li>Hybrid mobile app to implement tracking on</li>
+</ul>
+
+<div class="notices info" ><p>Please note that Snowflake will be used for illustration but the snowplow-mobile dbt package also supports <strong>BigQuery, Databricks, Postgres</strong> and <strong>Redshift</strong>. Further adapter support for this accelerator coming soon!</p>
+</div>
+
+
+
+
+
+<footer class=" footline" >
 	
-		<h1>Customize your own home page</h1>
-		<p>
-		  The site is working. Don't forget to customize this homepage with your own. You typically have 3 choices :
-		</p>
-		<ul>
-			<li><b>1. </b> Create an _index.md document in <b>content</b> folder and fill it with Markdown content</li>
-			<li><b>2. </b> Create an <b>index.html</b> file in the <b>static</b> folder and fill the file with HTML content</li>
-		  <li><b>3. </b> Configure your server to automatically redirect home page to one your documentation page</li>
-		</ul>
-	
-  
+</footer>
+
         
         </div>
         
@@ -783,8 +972,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -801,6 +988,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1046,8 +1236,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/" title=""> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/introduction/" title="Mobile &amp; Hybrid App Analytics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/upload/" title="Upload sample data" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1079,4 +1271,3 @@
 
   </body>
 </html>
-

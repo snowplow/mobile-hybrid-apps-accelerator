@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> | </title>
+    <title>Set-up and run dbt Package | </title>
 
     
     <link href="/css/nucleus.css?1664530343" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/modeling/2-run/">
     <script type="text/javascript" async=1 >
       ;(function (p, l, o, w, i, n, g) { if (!p[i]) { p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || []; p.GlobalSnowplowNamespace.push(i); p[i] = function () { (p[i].q = p[i].q || []).push(arguments) }; p[i].q = p[i].q || []; n = l.createElement(o); g = l.getElementsByTagName(o)[0]; n.async = 1; n.src = w; g.parentNode.insertBefore(n, g) } }(window, document, "script", "/js/3.6.0/9LZR5r.js", "snowplow"));
       
@@ -274,7 +274,7 @@
 
 
 <li data-nav-id="/modeling/" title="Modeling" class="dd-item
-        
+        parent
         
         
         ">
@@ -336,7 +336,7 @@
 
 
 <li data-nav-id="/modeling/2-run/" title="Set-up and run dbt Package"
-  class="dd-item ">
+  class="dd-item active">
   <a href="/modeling/2-run/">
     Set-up and run dbt Package
     
@@ -726,32 +726,109 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+               
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> / <a href='/modeling/'>Modeling</a> / Set-up and run dbt Package
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Set-up and run dbt Package
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
-           
+<p>This step assumes you have data in the <code>ATOMIC.SAMPLE_EVENTS</code> table which will be used to demonstrate how to set-up and run the snowplow-mobile dbt package to model Snowplow mobile data.</p>
+<hr>
+<h4 id="step-1-set-up-variables"><strong>Step 1:</strong> Set-up Variables</h4>
+<p>The snowplow_mobile dbt package comes with a list of variables specified with a default value that you may need to overwrite in your own dbt project&rsquo;s <code>dbt_project.yml</code> file. For details you can have a look at the installed package&rsquo;s default variables which can be found at <code>[dbt_project_name]/dbt_packages/snowplow_mobile/dbt_project.yml</code>.</p>
+<p>For the sake of simplicity we have selected the variables that you will most likely need to overwrite, the rest can be changed at a later stage if and when it is needed.</p>
+<ul>
+<li><code>snowplow__start_date</code>: The date of the first tracked event.</li>
+<li><code>snowplow__enable_mobile_context</code>: Disabled by default, enables the mobile (or platform) context with device information</li>
+<li><code>snowplow__enable_geolocation_context</code>: Disabled by default, enables geolocation context</li>
+<li><code>snowplow__enable_application_context</code>: Disabled by default, enables application context</li>
+<li><code>snowplow__enable_screen_context</code>: Disabled by default, enables screen context with the current screen view information</li>
+<li><code>snowplow__events</code>: Variable to overwrite the events table in case it is named differently. It would have to be modified when using the <em>sample_events</em> table as a base.</li>
+</ul>
+<p>Add the following snippet to the <code>dbt_project.yml</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">vars</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">snowplow_mobile</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__start_date</span>: <span style="color:#e6db74">&#39;2021-09-01&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__backfill_limit_days</span>: <span style="color:#ae81ff">400</span> <span style="color:#75715e"># in order to load the whole sample dataset</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_mobile_context</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_geolocation_context</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_application_context</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_screen_context</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__events</span>: <span style="color:#e6db74">&#39;atomic.sample_events&#39;</span>
+</span></span></code></pre></div><h4 id="step-2-add-the-selectorsyml-to-your-project"><strong>Step 2:</strong> Add the selectors.yml to your project</h4>
+<p>The mobile package provides a suite of suggested selectors to help run and test the models.</p>
+<p>These are defined in the <a href="https://github.com/snowplow/dbt-snowplow-mobile/blob/main/selectors.yml">selectors.yml</a> file within the package, however to use these model selections you will need to copy this file into your own dbt project directory.</p>
+<p>This is a top-level file and therefore should sit alongside your <code>dbt_project.yml</code> file.</p>
+<hr>
+<h4 id="step-3-run-the-model"><strong>Step 3:</strong> Run the model</h4>
+<p>Execute the following either through your CLI or from within dbt Cloud</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dbt run --selector snowplow_mobile
+</span></span></code></pre></div><p>This should take a couple of minutes to run.</p>
+
+
+<footer class="footline">
 	
-		<h1>Customize your own home page</h1>
-		<p>
-		  The site is working. Don't forget to customize this homepage with your own. You typically have 3 choices :
-		</p>
-		<ul>
-			<li><b>1. </b> Create an _index.md document in <b>content</b> folder and fill it with Markdown content</li>
-			<li><b>2. </b> Create an <b>index.html</b> file in the <b>static</b> folder and fill the file with HTML content</li>
-		  <li><b>3. </b> Configure your server to automatically redirect home page to one your documentation page</li>
-		</ul>
-	
-  
+</footer>
+
         
         </div>
         
@@ -834,6 +911,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -846,6 +924,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -863,6 +944,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -878,6 +960,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1046,8 +1131,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/modeling/1-installation/" title="Install Snowplow dbt Package"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/introduction/" title="Mobile &amp; Hybrid App Analytics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/modeling/3-test/" title="Explore Snowplow data" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

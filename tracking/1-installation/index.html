@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> | </title>
+    <title>Installing the trackers | </title>
 
     
     <link href="/css/nucleus.css?1664530343" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/tracking/1-installation/">
     <script type="text/javascript" async=1 >
       ;(function (p, l, o, w, i, n, g) { if (!p[i]) { p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || []; p.GlobalSnowplowNamespace.push(i); p[i] = function () { (p[i].q = p[i].q || []).push(arguments) }; p[i].q = p[i].q || []; n = l.createElement(o); g = l.getElementsByTagName(o)[0]; n.async = 1; n.src = w; g.parentNode.insertBefore(n, g) } }(window, document, "script", "/js/3.6.0/9LZR5r.js", "snowplow"));
       
@@ -468,7 +468,7 @@
 
 
 <li data-nav-id="/tracking/" title="Tracking" class="dd-item
-        
+        parent
         
         
         ">
@@ -501,7 +501,7 @@
 
 
 <li data-nav-id="/tracking/1-installation/" title="Installing the trackers"
-  class="dd-item ">
+  class="dd-item active">
   <a href="/tracking/1-installation/">
     Installing the trackers
     
@@ -726,32 +726,136 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+               
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> / <a href='/tracking/'>Tracking</a> / Installing the trackers
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Installing the trackers
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
-           
+<p>To instrument tracking, you will need to install tracker libraries both in the Web view as well as the native mobile app.</p>
+<h4 id="snowplow-webview-tracker-installation">Snowplow WebView tracker installation</h4>
+<p>To install the <a href="https://github.com/snowplow-incubator/snowplow-webview-tracker">WebView tracker</a> in your JavaScript or TypeScript app, add the npm package:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install --save @snowplow/webview-tracker
+</span></span></code></pre></div><p>You will then be able to use the functions provided by the WebView tracker as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">trackSelfDescribingEvent</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@snowplow/webview-tracker&#39;</span>;
+</span></span></code></pre></div><p>There is no need to configure the WebView tracker.
+All configuration is done in the native layer as explained next.</p>
+<h4 id="snowplow-ios-and-android-tracker-installation">Snowplow iOS and Android tracker installation</h4>
+<p>First, you will need to install the Snowplow tracker package in your app.
+Below, we show how to do so using the Swift Package Manager (SPM) on iOS and Gradle on Android.
+To learn about other options for installing the trackers (e.g. using CocoaPods or Carthage on iOS), <a href="https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/mobile-trackers/mobile-trackers-v3-0/quick-start-guide/">see the mobile tracker documentation</a>.</p>
+
+
+<div class="tab-panel">
+    <div class="tab-nav">
+    
+        <button
+          data-tab-item="iOS"
+          data-tab-group="platform"
+          class="tab-nav-button btn active"
+          onclick="switchTab('platform','iOS')"
+         >iOS</button>
+    
+        <button
+          data-tab-item="Android"
+          data-tab-group="platform"
+          class="tab-nav-button btn "
+          onclick="switchTab('platform','Android')"
+         >Android</button>
+    
+    </div>
+    <div class="tab-content">
+        
+        <div data-tab-item="iOS" data-tab-group="platform" class="tab-item active">
+            <p>You can install the tracker using SPM as follows:</p>
+<ol>
+<li>In Xcode, select File &gt; Swift Packages &gt; Add Package Dependency.</li>
+<li>Add the url where to download the library: <a href="https://github.com/snowplow/snowplow-objc-tracker">https://github.com/snowplow/snowplow-objc-tracker</a></li>
+</ol>
+
+        </div>
+        
+        <div data-tab-item="Android" data-tab-group="platform" class="tab-item ">
+            <p>The tracker can be installed using Gradle. Add the following to your <code>build.gradle</code> file:</p>
+<pre tabindex="0"><code>dependencies {
+  ...
+  // Snowplow Android Tracker
+  implementation &#39;com.snowplowanalytics:snowplow-android-tracker:3.+&#39;
+  // In case &#39;lifecycleAutotracking&#39; is enabled
+  implementation &#39;androidx.lifecycle-extensions:2.2.+&#39;
+  ...
+}
+</code></pre>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<footer class="footline">
 	
-		<h1>Customize your own home page</h1>
-		<p>
-		  The site is working. Don't forget to customize this homepage with your own. You typically have 3 choices :
-		</p>
-		<ul>
-			<li><b>1. </b> Create an _index.md document in <b>content</b> folder and fill it with Markdown content</li>
-			<li><b>2. </b> Create an <b>index.html</b> file in the <b>static</b> folder and fill the file with HTML content</li>
-		  <li><b>3. </b> Configure your server to automatically redirect home page to one your documentation page</li>
-		</ul>
-	
-  
+</footer>
+
         
         </div>
         
@@ -930,6 +1034,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -942,6 +1047,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -958,6 +1064,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1046,8 +1155,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/tracking/" title="Tracking"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/introduction/" title="Mobile &amp; Hybrid App Analytics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/tracking/2-mobile_trackers_usage/" title="Configuring and using the iOS and Android trackers" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

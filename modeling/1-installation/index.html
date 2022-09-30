@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> | </title>
+    <title>Install Snowplow dbt Package | </title>
 
     
     <link href="/css/nucleus.css?1664530343" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/modeling/1-installation/">
     <script type="text/javascript" async=1 >
       ;(function (p, l, o, w, i, n, g) { if (!p[i]) { p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || []; p.GlobalSnowplowNamespace.push(i); p[i] = function () { (p[i].q = p[i].q || []).push(arguments) }; p[i].q = p[i].q || []; n = l.createElement(o); g = l.getElementsByTagName(o)[0]; n.async = 1; n.src = w; g.parentNode.insertBefore(n, g) } }(window, document, "script", "/js/3.6.0/9LZR5r.js", "snowplow"));
       
@@ -274,7 +274,7 @@
 
 
 <li data-nav-id="/modeling/" title="Modeling" class="dd-item
-        
+        parent
         
         
         ">
@@ -307,7 +307,7 @@
 
 
 <li data-nav-id="/modeling/1-installation/" title="Install Snowplow dbt Package"
-  class="dd-item ">
+  class="dd-item active">
   <a href="/modeling/1-installation/">
     Install Snowplow dbt Package
     
@@ -726,32 +726,86 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+               
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> / <a href='/modeling/'>Modeling</a> / Install Snowplow dbt Package
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Install Snowplow dbt Package
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
-           
+<h4 id="step-1-add-snowplow-mobile-package"><strong>Step 1:</strong> Add snowplow-mobile package</h4>
+<p>Add the snowplow-web package to your packages.yml file. The latest version can be found <a href="https://hub.getdbt.com/snowplow/snowplow_web/latest/">here</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">packages</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">package</span>: <span style="color:#ae81ff">snowplow/snowplow_mobile</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">version</span>: <span style="color:#ae81ff">0.5.3</span>
+</span></span></code></pre></div><hr>
+<h4 id="step-2-install-the-package"><strong>Step 2:</strong> Install the package</h4>
+<p>Install the package by running:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dbt deps
+</span></span></code></pre></div>
+
+<footer class="footline">
 	
-		<h1>Customize your own home page</h1>
-		<p>
-		  The site is working. Don't forget to customize this homepage with your own. You typically have 3 choices :
-		</p>
-		<ul>
-			<li><b>1. </b> Create an _index.md document in <b>content</b> folder and fill it with Markdown content</li>
-			<li><b>2. </b> Create an <b>index.html</b> file in the <b>static</b> folder and fill the file with HTML content</li>
-		  <li><b>3. </b> Configure your server to automatically redirect home page to one your documentation page</li>
-		</ul>
-	
-  
+</footer>
+
         
         </div>
         
@@ -834,6 +888,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -846,6 +901,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -862,6 +918,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1046,8 +1105,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/modeling/" title="Modeling"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/introduction/" title="Mobile &amp; Hybrid App Analytics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/modeling/2-run/" title="Set-up and run dbt Package" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

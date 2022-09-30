@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> | </title>
+    <title>Explore Snowplow data | </title>
 
     
     <link href="/css/nucleus.css?1664530343" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/modeling/3-test/">
     <script type="text/javascript" async=1 >
       ;(function (p, l, o, w, i, n, g) { if (!p[i]) { p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || []; p.GlobalSnowplowNamespace.push(i); p[i] = function () { (p[i].q = p[i].q || []).push(arguments) }; p[i].q = p[i].q || []; n = l.createElement(o); g = l.getElementsByTagName(o)[0]; n.async = 1; n.src = w; g.parentNode.insertBefore(n, g) } }(window, document, "script", "/js/3.6.0/9LZR5r.js", "snowplow"));
       
@@ -274,7 +274,7 @@
 
 
 <li data-nav-id="/modeling/" title="Modeling" class="dd-item
-        
+        parent
         
         
         ">
@@ -365,7 +365,7 @@
 
 
 <li data-nav-id="/modeling/3-test/" title="Explore Snowplow data"
-  class="dd-item ">
+  class="dd-item active">
   <a href="/modeling/3-test/">
     Explore Snowplow data
     
@@ -726,32 +726,137 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+               
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> / <a href='/modeling/'>Modeling</a> / Explore Snowplow data
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Explore Snowplow data
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
-           
+<p>Data should now be loaded into your warehouse. In this section, we will take a closer look at the output to mitigate data issues and get familiar with the derived tables.</p>
+<hr>
+<h4 id="step-1-check-the-output-schemas"><strong>Step 1:</strong> Check the output schemas</h4>
+<p>Head to the SQL editor of your choice (e.g.: Snowflake Web UI) to check the model&rsquo;s output. You should be able to see three new schemas created:</p>
+<ol>
+<li>[your_custom_schema]_<em><strong>scratch</strong></em>: drop and recompute models that aid the incremental run</li>
+<li>[your_custom_schema]_<em><strong>derived</strong></em>: main output models you can use in your downstream models and reporting</li>
+<li>[your_custom_schema]_<em><strong>snowplow_manifest</strong></em>: tables that help the integrity and core incremental logic of the model</li>
+</ol>
+<hr>
+<h4 id="step-2-explore-your-data"><strong>Step 2:</strong> Explore your data</h4>
+<p>Take some time to familiarise yourself with the derived tables. You could run a few simple queries such as the ones listed below. Make sure to modify the schema to be aligned with your custom dbt schema.</p>
+<p><strong>Find out the number of screen views using <code>derived.snowplow_mobile_screen_views:</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">WITH</span> VIEWS <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    SCREEN_VIEW_NAME,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">FROM</span> YOUR_CUSTOM_SCHEMA_DERIVED.SNOWPLOW_MOBILE_SCREEN_VIEWS
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> VIEWS
+</span></span></code></pre></div><p><strong>Calculate the bounce rate using <code>derived.snowplow_sessions:</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">WITH</span> BOUNCE_RATE <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    APP_ID,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">COUNT</span>(<span style="color:#66d9ef">DISTINCT</span> SESSION_ID) <span style="color:#66d9ef">AS</span> SESSIONS,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">COUNT</span>(<span style="color:#66d9ef">DISTINCT</span> <span style="color:#66d9ef">CASE</span> <span style="color:#66d9ef">WHEN</span> SCREEN_VIEWS <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">THEN</span> SESSION_ID <span style="color:#66d9ef">END</span>) <span style="color:#f92672">/</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#66d9ef">DISTINCT</span> SESSION_ID) <span style="color:#66d9ef">AS</span> BOUNCE_RATE
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">FROM</span> YOUR_CUSTOM_SCHEMA_DERIVED.SNOWPLOW_MOBILE_SESSIONS
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> SESSIONS <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> BOUNCE_RATE
+</span></span></code></pre></div><p><strong>Find out details about the highest engaged user using <code>derived.snowplow_users:</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">WITH</span> ENGAGEMENT <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">FROM</span> YOUR_CUSTOM_SCHEMA_DERIVED.SNOWPLOW_MOBILE_USERS
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> SCREEN_VIEWS <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> ENGAGEMENT
+</span></span></code></pre></div><hr>
+<p>Check out the <strong>database</strong> section of the <a href="https://snowplow.github.io/dbt-snowplow-mobile/#!/overview/snowplow_mobile">documentation site</a> for a full breakdown of what the output should look like.</p>
+
+
+<footer class="footline">
 	
-		<h1>Customize your own home page</h1>
-		<p>
-		  The site is working. Don't forget to customize this homepage with your own. You typically have 3 choices :
-		</p>
-		<ul>
-			<li><b>1. </b> Create an _index.md document in <b>content</b> folder and fill it with Markdown content</li>
-			<li><b>2. </b> Create an <b>index.html</b> file in the <b>static</b> folder and fill the file with HTML content</li>
-		  <li><b>3. </b> Configure your server to automatically redirect home page to one your documentation page</li>
-		</ul>
-	
-  
+</footer>
+
         
         </div>
         
@@ -834,6 +939,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -846,6 +952,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -879,6 +988,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -897,6 +1007,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1046,8 +1159,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/modeling/2-run/" title="Set-up and run dbt Package"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/introduction/" title="Mobile &amp; Hybrid App Analytics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/visualisation/" title="Visualisation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

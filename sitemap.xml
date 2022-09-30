@@ -1,16 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <sitemap>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/en/sitemap.xml</loc>
-    
-      <lastmod>2022-08-16T17:24:05+01:00</lastmod>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>https://docs.snowplow.io/snowplow-hybrid-apps-accelerator/fr/sitemap.xml</loc>
-    
-  </sitemap>
-  
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>/upload/1-upload/</loc>
+  </url><url>
+    <loc>/modeling/1-installation/</loc>
+  </url><url>
+    <loc>/tracking/1-installation/</loc>
+  </url><url>
+    <loc>/introduction/</loc>
+  </url><url>
+    <loc>/next_steps/1-run_model/</loc>
+  </url><url>
+    <loc>/visualisation/1-streamlit/</loc>
+  </url><url>
+    <loc>/upload/</loc>
+    <lastmod>2022-08-16T17:24:05+01:00</lastmod>
+  </url><url>
+    <loc>/tracking/2-mobile_trackers_usage/</loc>
+  </url><url>
+    <loc>/modeling/</loc>
+  </url><url>
+    <loc>/modeling/2-run/</loc>
+  </url><url>
+    <loc>/next_steps/2-custom_models/</loc>
+  </url><url>
+    <loc>/modeling/3-test/</loc>
+  </url><url>
+    <loc>/tracking/3-webview_usage/</loc>
+  </url><url>
+    <loc>/visualisation/</loc>
+  </url><url>
+    <loc>/tracking/</loc>
+  </url><url>
+    <loc>/next_steps/</loc>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2022-08-16T17:24:05+01:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+  </url><url>
+    <loc>/tags/</loc>
+  </url>
+</urlset>

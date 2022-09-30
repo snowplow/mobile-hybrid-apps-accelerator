@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> | </title>
+    <title>Configuring and using the iOS and Android trackers | </title>
 
     
     <link href="/css/nucleus.css?1664530343" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/tracking/2-mobile_trackers_usage/">
     <script type="text/javascript" async=1 >
       ;(function (p, l, o, w, i, n, g) { if (!p[i]) { p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || []; p.GlobalSnowplowNamespace.push(i); p[i] = function () { (p[i].q = p[i].q || []).push(arguments) }; p[i].q = p[i].q || []; n = l.createElement(o); g = l.getElementsByTagName(o)[0]; n.async = 1; n.src = w; g.parentNode.insertBefore(n, g) } }(window, document, "script", "/js/3.6.0/9LZR5r.js", "snowplow"));
       
@@ -468,7 +468,7 @@
 
 
 <li data-nav-id="/tracking/" title="Tracking" class="dd-item
-        
+        parent
         
         
         ">
@@ -530,7 +530,7 @@
 
 
 <li data-nav-id="/tracking/2-mobile_trackers_usage/" title="Configuring and using the iOS and Android trackers"
-  class="dd-item ">
+  class="dd-item active">
   <a href="/tracking/2-mobile_trackers_usage/">
     Configuring and using the iOS and Android trackers
     
@@ -726,32 +726,196 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+               
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> / <a href='/tracking/'>Tracking</a> / Configuring and using the iOS and Android trackers
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Configuring and using the iOS and Android trackers
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
-           
+<p>Having installed the tracker dependencies, the next step is to initialize the tracker instances in your app.
+Tracker instances are initialized given configuration that includes network settings, tracker feature settings, session settings, and more.</p>
+<p>The following snippets show how to initialize tracker instances using the default settings.
+They call the <code>Snowplow.createTracker()</code> function and pass it two required information:</p>
+<ol>
+<li>The tracker namespace which uniquely identifies the tracker within the app.</li>
+<li>Network configuration with the endpoint address of the Snowplow Collector (e.g. <a href="https://docs.snowplowanalytics.com/docs/understanding-your-pipeline/what-is-snowplow-micro/">Snowplow Micro</a> or <a href="https://docs.snowplowanalytics.com/docs/understanding-your-pipeline/what-is-snowplow-mini/">Snowplow Mini</a>) to send events to.</li>
+</ol>
+
+
+<div class="tab-panel">
+    <div class="tab-nav">
+    
+        <button
+          data-tab-item="iOS"
+          data-tab-group="platform"
+          class="tab-nav-button btn active"
+          onclick="switchTab('platform','iOS')"
+         >iOS</button>
+    
+        <button
+          data-tab-item="Android"
+          data-tab-group="platform"
+          class="tab-nav-button btn "
+          onclick="switchTab('platform','Android')"
+         >Android</button>
+    
+    </div>
+    <div class="tab-content">
+        
+        <div data-tab-item="iOS" data-tab-group="platform" class="tab-item active">
+            <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">SnowplowTracker</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> networkConfig = NetworkConfiguration(endpoint: COLLECTOR_URL, method: .post)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> tracker = Snowplow.createTracker(
+</span></span><span style="display:flex;"><span>    namespace: <span style="color:#e6db74">&#34;appTracker&#34;</span>,
+</span></span><span style="display:flex;"><span>    network: networkConfig,
+</span></span><span style="display:flex;"><span>    configurations: []
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div>
+        </div>
+        
+        <div data-tab-item="Android" data-tab-group="platform" class="tab-item ">
+            <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> com.snowplowanalytics.snowplow.Snowplow<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.snowplowanalytics.snowplow.network.HttpMethod<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.snowplowanalytics.snowplow.configuration.NetworkConfiguration<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>NetworkConfiguration networkConfig <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> NetworkConfiguration<span style="color:#f92672">(</span>COLLECTOR_URL<span style="color:#f92672">,</span> HttpMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">POST</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>TrackerController tracker <span style="color:#f92672">=</span> Snowplow<span style="color:#f92672">.</span><span style="color:#a6e22e">createTracker</span><span style="color:#f92672">(</span>context<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;appTracker&#34;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>   networkConfig
+</span></span><span style="display:flex;"><span><span style="color:#f92672">);</span>
+</span></span></code></pre></div>
+        </div>
+        
+    </div>
+</div>
+
+<p>You can learn more about installing and configuring the mobile trackers in <a href="https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/mobile-trackers/mobile-trackers-v3-0/introduction/">the mobile tracker documentation</a>.</p>
+<h4 id="tracking-events-in-native-code">Tracking events in native code</h4>
+<p>The initialized tracker instances can be used to track events in your native code.
+We won&rsquo;t go into detail on all the tracking features, but only give an example how to track self-describing events.
+Self-describing events are based around &ldquo;self-describing&rdquo; (self-referential) JSONs, which are a specific kind of <a href="http://json-schema.org/">JSON schema</a>.
+A unique schema can be designed for each type of event that you want to track.
+This allows you to track the specific things that are important to you, in a way that is defined by you.</p>
+<p>A self-describing JSON has two keys, schema and data.
+The schema value should point to a valid self-describing JSON schema.
+They are called self-describing because the schema will specify the fields allowed in the data value.
+Read more about how schemas are used with Snowplow <a href="https://docs.snowplowanalytics.com/docs/understanding-tracking-design/understanding-schemas-and-validation/">here</a>.</p>
+
+
+<div class="tab-panel">
+    <div class="tab-nav">
+    
+        <button
+          data-tab-item="iOS"
+          data-tab-group="platform"
+          class="tab-nav-button btn active"
+          onclick="switchTab('platform','iOS')"
+         >iOS</button>
+    
+        <button
+          data-tab-item="Android"
+          data-tab-group="platform"
+          class="tab-nav-button btn "
+          onclick="switchTab('platform','Android')"
+         >Android</button>
+    
+    </div>
+    <div class="tab-content">
+        
+        <div data-tab-item="iOS" data-tab-group="platform" class="tab-item active">
+            <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> schema = <span style="color:#e6db74">&#34;iglu:com.snowplowanalytics.snowplow/link_click/jsonschema/1-0-1&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> data = [<span style="color:#e6db74">&#34;targetUrl&#34;</span>: <span style="color:#e6db74">&#34;http://a-target-url.com&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> event = SelfDescribing(schema: schema, payload: data)       
+</span></span><span style="display:flex;"><span>tracker.track(event)
+</span></span></code></pre></div>
+        </div>
+        
+        <div data-tab-item="Android" data-tab-group="platform" class="tab-item ">
+            <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String schema <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;iglu:com.snowplowanalytics.snowplow/link_click/jsonschema/1-0-1&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>Map data <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;targetUrl&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;http://a-target-url.com&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>SelfDescribingJson sdj <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SelfDescribingJson<span style="color:#f92672">(</span>schema<span style="color:#f92672">,</span> data<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>SelfDescribing event <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SelfDescribing<span style="color:#f92672">(</span>sdj<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>tracker<span style="color:#f92672">.</span><span style="color:#a6e22e">track</span><span style="color:#f92672">(</span>event<span style="color:#f92672">);</span>
+</span></span></code></pre></div>
+        </div>
+        
+    </div>
+</div>
+
+<h4 id="subscribing-to-events-from-the-web-view">Subscribing to events from the Web view</h4>
+<p>In addition to tracking events from the native code, we also want to track events from the Web view.
+In the <a href="/tracking/3-webview_usage/">following section</a>, we will explain how to instrument your Web application to use the WebView tracker.
+However, in order for the events from the WebView tracker to arrive at the Snowplow Collector, it is necessary to subscribe the native mobile trackers to listen for messages from the Web view.</p>
+<p>You can call the <code>Snowplow.subscribeToWebViewEvents(webView)</code> function to subscribe to the messages (same on iOS and Android).
+The <code>webView</code> object is an instance of <code>WKWebView</code> on iOS and <code>WebView</code> on Android.
+Please note that the events will only be tracked if you have initialized a tracker instance as described above.</p>
+
+
+<footer class="footline">
 	
-		<h1>Customize your own home page</h1>
-		<p>
-		  The site is working. Don't forget to customize this homepage with your own. You typically have 3 choices :
-		</p>
-		<ul>
-			<li><b>1. </b> Create an _index.md document in <b>content</b> folder and fill it with Markdown content</li>
-			<li><b>2. </b> Create an <b>index.html</b> file in the <b>static</b> folder and fill the file with HTML content</li>
-		  <li><b>3. </b> Configure your server to automatically redirect home page to one your documentation page</li>
-		</ul>
-	
-  
+</footer>
+
         
         </div>
         
@@ -930,6 +1094,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -942,6 +1107,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -959,6 +1127,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -974,6 +1143,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1046,8 +1218,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/tracking/1-installation/" title="Installing the trackers"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/introduction/" title="Mobile &amp; Hybrid App Analytics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/tracking/3-webview_usage/" title="Setting up tracking in Web views" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.104.2" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Data upload | </title>
+
+    
+    <link href="/css/nucleus.css?1664530343" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1664530343" rel="stylesheet">
+    <link href="/css/hybrid.css?1664530343" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1664530343" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1664530343" rel="stylesheet">
+    <link href="/css/auto-complete.css?1664530343" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1664530343" rel="stylesheet">
+    <link href="/css/theme.css?1664530343" rel="stylesheet">
+    <link href="/css/tabs.css?1664530343" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1664530343" rel="stylesheet">
+    
+    <link href="/css/theme-custom.css?1664530343" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1664530343"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/upload/1-upload/">
+    <script type="text/javascript" async=1 >
+      ;(function (p, l, o, w, i, n, g) { if (!p[i]) { p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || []; p.GlobalSnowplowNamespace.push(i); p[i] = function () { (p[i].q = p[i].q || []).push(arguments) }; p[i].q = p[i].q || []; n = l.createElement(o); g = l.getElementsByTagName(o)[0]; n.async = 1; n.src = w; g.parentNode.insertBefore(n, g) } }(window, document, "script", "/js/3.6.0/9LZR5r.js", "snowplow"));
+      
+      const trackerConfig = {
+        appId: 'accelerator',
+        cookieDomain: `.snowplow.io`,
+        cookieName: '_sp5_',
+        contexts: {
+          webPage: true,
+        },
+      }
+    
+      window.snowplow('newTracker', 'snplow5', 'collector.snowplow.io', trackerConfig);
+
+      window.snowplow('newTracker', 'biz1', 'c.snowplow.io', trackerConfig)
+
+      snowplow('enableActivityTracking', {
+        minimumVisitLength: 10,
+        heartbeatDelay: 10
+      });
+
+      snowplow('trackPageView')
+
+    </script>
+    
+
+<div id="header-wrapper">
+
+    <div id="header">
+        <a id="logo"
+   href='/'>
+   <img src="/images/snowplow-logo.svg"
+      style="height: 20px; margin-left: 24px; margin-right: 8px;" />
+   <h1>Accelerators</h1>
+</a>
+    </div>
+    <div class="polygon">
+        <svg style="position:absolute; left:341px; top: 0px;" width="70" height="70" viewBox="0 0 70 70" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.35" fill-rule="evenodd" clip-rule="evenodd"
+                d="M5.72705 48.3001C5.72705 31.4361 19.345 17.8181 36.208 17.8181C53.008 17.8181 66.6901 31.4361 66.6901 48.3001H58.6081C58.6081 35.9551 48.5541 25.9001 36.208 25.9001C23.863 25.9001 13.8081 35.8901 13.8081 48.3001H5.72705ZM42.125 48.3001C42.125 49.8697 41.5015 51.3749 40.3917 52.4848C39.2819 53.5946 37.7766 54.2181 36.2071 54.2181C34.6375 54.2181 33.1322 53.5946 32.0224 52.4848C30.9126 51.3749 30.2891 49.8697 30.2891 48.3001C30.2891 46.7306 30.9126 45.2253 32.0224 44.1155C33.1322 43.0056 34.6375 42.3821 36.2071 42.3821C37.7766 42.3821 39.2819 43.0056 40.3917 44.1155C41.5015 45.2253 42.125 46.7306 42.125 48.3001Z"
+                fill="url(#paint0_linear_208_8148)" />
+            <path
+                d="M64.151 45.755C64.151 28.891 50.533 15.2729 33.669 15.2729C16.806 15.2729 3.18799 28.891 3.18799 45.755H11.269C11.269 33.345 21.324 23.3549 33.669 23.3549C46.015 23.3549 56.069 33.409 56.069 45.755H64.151Z"
+                stroke="#9D80D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+                d="M33.6642 15.2729V23.2909M12.0942 24.1809L17.8212 29.846M55.1712 24.1819L49.5082 29.846M42.6962 36.6539L37.8592 41.554M33.6682 51.673C35.2379 51.673 36.7433 51.0494 37.8533 49.9395C38.9632 48.8295 39.5867 47.3241 39.5867 45.7545C39.5867 44.1848 38.9632 42.6794 37.8533 41.5694C36.7433 40.4595 35.2379 39.8359 33.6682 39.8359C32.0986 39.8359 30.5932 40.4595 29.4832 41.5694C28.3733 42.6794 27.7497 44.1848 27.7497 45.7545C27.7497 47.3241 28.3733 48.8295 29.4832 49.9395C30.5932 51.0494 32.0986 51.673 33.6682 51.673V51.673Z"
+                stroke="#9D80D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <defs>
+                <linearGradient id="paint0_linear_208_8148" x1="5.72705" y1="36.0181" x2="66.6901" y2="36.0181"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#9D80D2" />
+                    <stop offset="1" stop-color="#6738B8" stop-opacity="0" />
+                </linearGradient>
+            </defs>
+        </svg>
+        <svg style="position:absolute; left:405px; top: -4px;;" width="25" height="27" viewBox="0 0 25 27" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M25 12.5L0.249999 26.7894L0.25 -1.78942L25 12.5Z" fill="#825CC5" />
+        </svg>
+        <svg style="position:absolute; left:446px; top: 18px;" width="30" height="35" viewBox="0 0 30 35" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M30 17.5L0.749998 34.3875L0.75 0.612504L30 17.5Z" fill="#825CC5" />
+        </svg>
+
+        <svg style="position:absolute; left:493px; top: -3px;" width="49" height="40" viewBox="0 0 49 40" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M49 11.5L0.249997 39.6458L0.25 -16.6458L49 11.5Z" fill="#825CC5" />
+        </svg>
+
+        <svg style="position:absolute; left:542px; top: 32px;" width="18" height="21" viewBox="0 0 18 21" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 10.5L0.750001 20.4593L0.750002 0.540707L18 10.5Z" fill="#825CC5" />
+        </svg>
+
+
+    </div>
+    <div id="options">
+        
+
+
+
+
+
+<a class="hide" href="#" data-clear-history-toggle="">
+    Clear History
+    <svg style="margin-left: 10px" width="13" height="19" viewBox="0 0 18 19" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M9.00898 0.0398355C13.5376 0.0534174 17.3509 3.42984 17.9126 7.92352C18.4743 12.4172 15.6095 16.6284 11.2235 17.7562C7.77045 18.6442 4.22135 17.4033 2.05001 14.7821L2.04992 17.0001C2.04992 17.5129 1.66388 17.9356 1.16654 17.9934L1.04992 18.0001C0.537082 18.0001 0.11441 17.6141 0.0566452 17.1167L0.0499175 17.0001V12.0001C0.0499175 11.4873 0.435958 11.0646 0.933296 11.0068L1.04992 11.0001H6.04992C6.6022 11.0001 7.04992 11.4478 7.04992 12.0001C7.04992 12.5129 6.66388 12.9356 6.16654 12.9934L6.04992 13.0001L3.20949 13.001C4.84102 15.3812 7.82673 16.5647 10.7254 15.8193C14.1367 14.942 16.3649 11.6667 15.928 8.17159C15.4911 4.6765 12.5253 2.05039 9.003 2.03983C5.48072 2.02933 2.49921 4.63766 2.04144 8.13007C1.96966 8.67767 1.46755 9.0634 0.919951 8.99162C0.372351 8.91984 -0.0133794 8.41773 0.0583991 7.87013C0.646972 3.37989 4.48033 0.0263353 9.00898 0.0398355Z"
+            fill="white" />
+    </svg>
+
+</a>
+
+
+
+
+
+<a target="_blank" href="https://try.snowplowanalytics.com/">
+    <button class="try-sp">
+        Try Snowplow
+    </button>
+</a>
+
+<span id="sidebar-toggle-span">
+    <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+
+        <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
+            <path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"
+                d="M4 7h22M4 15h22M4 23h22"></path>
+        </svg>
+
+    </a>
+</span>
+
+    </div>
+</div>
+    <nav id="sidebar" class="showVisitedLinks">
+
+  
+  
+
+  <div class="highlightable">
+    
+
+    <ul class="topics">
+
+      
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/introduction/" title="Mobile &amp; Hybrid App Analytics" class="dd-item
+        
+        
+        
+        ">
+  <a href="/introduction/">
+    Introduction
+    
+    <svg width="20" height="20" class="read-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      
+      <path
+        d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+    </svg> 
+  </a>
+  
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/upload/" title="Upload sample data" class="dd-item
+        parent
+        
+        
+        ">
+  <a href="/upload/">
+    1. Upload sample data
+    
+    <svg width="20" height="20" class="read-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      
+      <path
+        d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+    </svg> 
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+<li data-nav-id="/upload/1-upload/" title="Data upload"
+  class="dd-item active">
+  <a href="/upload/1-upload/">
+    Data upload
+    
+    <svg width="20" height="20" class="read-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      
+      <path
+        d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+    </svg>
+    
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/modeling/" title="Modeling" class="dd-item
+        
+        
+        
+        ">
+  <a href="/modeling/">
+    2. Modeling
+    
+    <svg width="20" height="20" class="read-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      
+      <path
+        d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+    </svg> 
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+<li data-nav-id="/modeling/1-installation/" title="Install Snowplow dbt Package"
+  class="dd-item ">
+  <a href="/modeling/1-installation/">
+    Install Snowplow dbt Package
+    
+    <svg width="20" height="20" class="read-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      
+      <path
+        d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+    </svg>
+    
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+<li data-nav-id="/modeling/2-run/" title="Set-up and run dbt Package"
+  class="dd-item ">
+  <a href="/modeling/2-run/">
+    Set-up and run dbt Package
+    
+    <svg width="20" height="20" class="read-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      
+      <path
+        d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+    </svg>
+    
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+<li data-nav-id="/modeling/3-test/" title="Explore Snowplow data"
+  class="dd-item ">
+  <a href="/modeling/3-test/">
+    Explore Snowplow data
+    
+    <svg width="20" height="20" class="read-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      
+      <path
+        d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+    </svg>
+    
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/visualisation/" title="Visualisation" class="dd-item
+        
+        
+        
+        ">
+  <a href="/visualisation/">
+    3. Visualisation
+    
+    <svg width="20" height="20" class="read-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      
+      <path
+        d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+    </svg> 
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+<li data-nav-id="/visualisation/1-streamlit/" title="Streamlit"
+  class="dd-item ">
+  <a href="/visualisation/1-streamlit/">
+    Streamlit
+    
+    <svg width="20" height="20" class="read-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      
+      <path
+        d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+    </svg>
+    
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/tracking/" title="Tracking" class="dd-item
+        
+        
+        
+        ">
+  <a href="/tracking/">
+    4. Tracking
+    
+    <svg width="20" height="20" class="read-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      
+      <path
+        d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+    </svg> 
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+<li data-nav-id="/tracking/1-installation/" title="Installing the trackers"
+  class="dd-item ">
+  <a href="/tracking/1-installation/">
+    Installing the trackers
+    
+    <svg width="20" height="20" class="read-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      
+      <path
+        d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+    </svg>
+    
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+<li data-nav-id="/tracking/2-mobile_trackers_usage/" title="Configuring and using the iOS and Android trackers"
+  class="dd-item ">
+  <a href="/tracking/2-mobile_trackers_usage/">
+    Configuring and using the iOS and Android trackers
+    
+    <svg width="20" height="20" class="read-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      
+      <path
+        d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+    </svg>
+    
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+<li data-nav-id="/tracking/3-webview_usage/" title="Setting up tracking in Web views"
+  class="dd-item ">
+  <a href="/tracking/3-webview_usage/">
+    Setting up tracking in Web views
+    
+    <svg width="20" height="20" class="read-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      
+      <path
+        d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+    </svg>
+    
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/next_steps/" title="Next steps" class="dd-item
+        
+        
+        
+        ">
+  <a href="/next_steps/">
+    5. Next steps
+    
+    <svg width="20" height="20" class="read-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      
+      <path
+        d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+    </svg> 
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+<li data-nav-id="/next_steps/1-run_model/" title="Model your pipeline data"
+  class="dd-item ">
+  <a href="/next_steps/1-run_model/">
+    Model your pipeline data
+    
+    <svg width="20" height="20" class="read-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      
+      <path
+        d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+    </svg>
+    
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+<li data-nav-id="/next_steps/2-custom_models/" title="Custom models"
+  class="dd-item ">
+  <a href="/next_steps/2-custom_models/">
+    Custom models
+    
+    <svg width="20" height="20" class="read-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      
+      <path
+        d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+    </svg>
+    
+  </a>
+</li>
+
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+    </ul>
+  </div>
+  
+  
+  <section id="shortcuts">
+    <h3>More</h3>
+    <ul>
+      
+      <li>
+        <a class="padding" href="https://try.snowplowanalytics.com/">Try Snowplow</a>
+      </li>
+      
+      <li>
+        <a class="padding" href="https://snowplow.io/get-started/book-a-demo-of-snowplow-bdp/">Book a demo</a>
+      </li>
+      
+      <li>
+        <a class="padding" href="https://docs.snowplow.io/docs/">Documentation</a>
+      </li>
+      
+      <li>
+        <a class="padding" href="https://github.com/snowplow"><i class='fab fa-github'></i> Github</a>
+      </li>
+      
+      <li>
+        <a class="padding" href="https://discourse.snowplow.io/">Discourse</a>
+      </li>
+      
+    </ul>
+  </section>
+  </div>
+  
+  </div>
+
+</nav>
+
+
+
+        <section id="body">
+
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+               
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> / <a href='/upload/'>Upload sample data</a> / Data upload
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Data upload
+            </h1>
+          
+
+        
+
+
+<p>There are a number of options to load the sample Snowplow data to your Snowflake warehouse. Select the most suitable for your project below.</p>
+<section class="attachments blue">
+  <label>
+    <i class="fas fa-paperclip" aria-hidden="true"></i>
+    Attachments
+  </label>
+  <div class="attachments-files">
+    <li>
+      <a href="/upload/1-upload.files/upload.zip">upload.zip</a>
+      (117 KB)
+    </li>
+  </div>
+</section>
+
+
+
+<div class="tab-panel">
+    <div class="tab-nav">
+    
+        <button
+          data-tab-item="Python"
+          data-tab-group="select_upload_sf"
+          class="tab-nav-button btn active"
+          onclick="switchTab('select_upload_sf','Python')"
+         >Python</button>
+    
+        <button
+          data-tab-item="Snowflake Web Interface"
+          data-tab-group="select_upload_sf"
+          class="tab-nav-button btn "
+          onclick="switchTab('select_upload_sf','Snowflake Web Interface')"
+         >Snowflake Web Interface</button>
+    
+    </div>
+    <div class="tab-content">
+        
+        <div data-tab-item="Python" data-tab-group="select_upload_sf" class="tab-item active">
+            <p>Download the <code>upload.zip</code> folder which contains the <code>sample_events.csv</code> and the <code>snowflake_upload.py</code> files. You will need both to load the sample data to the Snowflake warehouse with Python.</p>
+<h4 id="step-1--set-up-your-environment"><strong>Step 1:</strong>  Set up your environment</h4>
+<p>Set up a virtual environment (recommended) and install the <a href="https://pypi.org/project/snowflake-connector-python/">snowflake-connector-python</a> package (tested with version 2.7.12).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 -m venv env
+</span></span><span style="display:flex;"><span>source env/bin/activate
+</span></span><span style="display:flex;"><span>pip install snowflake-connector-python<span style="color:#f92672">==</span>2.7.12
+</span></span></code></pre></div><h4 id="step-2-change-variables-and-connection-details"><strong>Step 2:</strong> Change variables and connection details</h4>
+<p>Open the <code>snowflake_upload.py</code> file and edit the following variables.</p>
+<h5 id="21-connection-details---update-username-password-and-account">2.1 Connection details - update username, password and account</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>user <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;YOUR_USERNAME&#39;</span>
+</span></span><span style="display:flex;"><span>password <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;YOUR_PASSWORD&#39;</span>
+</span></span><span style="display:flex;"><span>account <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;YOUR_ACCOUNT&#39;</span>
+</span></span></code></pre></div><h5 id="22-variables-to-be-modified---warehouse-and-database">2.2 Variables to be modified - warehouse and database</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>warehouse<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;YOUR_WAREHOUSE&#39;</span>
+</span></span><span style="display:flex;"><span>database <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;YOUR_DB</span>
+</span></span></code></pre></div><h5 id="23-path-to-the-sample_datacsv">2.3 Path to the sample_data.csv</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>csv_file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/Users/your_user/path_to_csv/sample_events.csv&#39;</span>
+</span></span></code></pre></div><h4 id="step-3-upload-data"><strong>Step 3:</strong> Upload Data</h4>
+<p>Run <code>snowflake_upload.py</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 snowflake_upload.py
+</span></span></code></pre></div><p>It should finish execution within a minute. You should be alerted as soon as each intermediary step finishes:</p>
+<pre tabindex="0"><code>Schema created
+Staging table YOUR_DB.ATOMIC.SAMPLE_EVENTS_STAGED is created
+Stage dropped, if applicable
+Stage created
+File put to stage
+Data loaded into staging table
+Target table: YOUR_DB.ATOMIC.SAMPLE_EVENTS is created
+Staging table: YOUR_DB.ATOMIC.SAMPLE_EVENTS_STAGED is dropped
+</code></pre><p>You will now have the ATOMIC.SAMPLE_EVENTS created and loaded with sample data.</p>
+
+        </div>
+        
+        <div data-tab-item="Snowflake Web Interface" data-tab-group="select_upload_sf" class="tab-item ">
+            <p>Download the <code>upload.zip</code> folder which contains the <code>sample_events.csv</code> and the <code>snowflake_upload.py</code> files. You will only need <code>sample_events.csv</code> to load the sample data to the Snowflake warehouse using the <code>Snowflake Web Interface</code>.</p>
+<p>For more details please check out the official <a href="https://docs.snowflake.com/en/user-guide/data-load-web-ui.html">Snowflake documentation</a>.</p>
+<h4 id="step-1--create-the-atomic-schema"><strong>Step 1:</strong>  Create the ATOMIC schema</h4>
+<p>If the ATOMIC schema doesn&rsquo;t exist, create it in your target database.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">SCHEMA</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">EXISTS</span> TARGET_DB.<span style="color:#66d9ef">ATOMIC</span>
+</span></span></code></pre></div><hr>
+<h4 id="step-2--create-the-sample_events_base-table"><strong>Step 2:</strong>  Create the SAMPLE_EVENTS_BASE table</h4>
+<p>This is where you will load the sample data to. You will need to modify the TARGET_DB according to your own database.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>  <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">OR</span> <span style="color:#66d9ef">REPLACE</span> <span style="color:#66d9ef">TABLE</span> TARGET_DB.<span style="color:#66d9ef">ATOMIC</span>.SAMPLE_EVENTS_BASE (
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	APP_ID VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	PLATFORM VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	ETL_TSTAMP TIMESTAMP_NTZ(<span style="color:#ae81ff">9</span>),
+</span></span><span style="display:flex;"><span>	COLLECTOR_TSTAMP TIMESTAMP_NTZ(<span style="color:#ae81ff">9</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>	DVCE_CREATED_TSTAMP TIMESTAMP_NTZ(<span style="color:#ae81ff">9</span>),
+</span></span><span style="display:flex;"><span>	EVENT VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	EVENT_ID VARCHAR(<span style="color:#ae81ff">36</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>	TXN_ID NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	NAME_TRACKER VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	V_TRACKER VARCHAR(<span style="color:#ae81ff">100</span>),
+</span></span><span style="display:flex;"><span>	V_COLLECTOR VARCHAR(<span style="color:#ae81ff">100</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>	V_ETL VARCHAR(<span style="color:#ae81ff">100</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>	USER_ID VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	USER_IPADDRESS VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	USER_FINGERPRINT VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	DOMAIN_USERID VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	DOMAIN_SESSIONIDX NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	NETWORK_USERID VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	GEO_COUNTRY VARCHAR(<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>	GEO_REGION VARCHAR(<span style="color:#ae81ff">3</span>),
+</span></span><span style="display:flex;"><span>	GEO_CITY VARCHAR(<span style="color:#ae81ff">75</span>),
+</span></span><span style="display:flex;"><span>	GEO_ZIPCODE VARCHAR(<span style="color:#ae81ff">15</span>),
+</span></span><span style="display:flex;"><span>	GEO_LATITUDE FLOAT,
+</span></span><span style="display:flex;"><span>	GEO_LONGITUDE FLOAT,
+</span></span><span style="display:flex;"><span>	GEO_REGION_NAME VARCHAR(<span style="color:#ae81ff">100</span>),
+</span></span><span style="display:flex;"><span>	IP_ISP VARCHAR(<span style="color:#ae81ff">100</span>),
+</span></span><span style="display:flex;"><span>	IP_ORGANIZATION VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	IP_DOMAIN VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	IP_NETSPEED VARCHAR(<span style="color:#ae81ff">100</span>),
+</span></span><span style="display:flex;"><span>	PAGE_URL VARCHAR(<span style="color:#ae81ff">4096</span>),
+</span></span><span style="display:flex;"><span>	PAGE_TITLE VARCHAR(<span style="color:#ae81ff">2000</span>),
+</span></span><span style="display:flex;"><span>	PAGE_REFERRER VARCHAR(<span style="color:#ae81ff">4096</span>),
+</span></span><span style="display:flex;"><span>	PAGE_URLSCHEME VARCHAR(<span style="color:#ae81ff">16</span>),
+</span></span><span style="display:flex;"><span>	PAGE_URLHOST VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	PAGE_URLPORT NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	PAGE_URLPATH VARCHAR(<span style="color:#ae81ff">3000</span>),
+</span></span><span style="display:flex;"><span>	PAGE_URLQUERY VARCHAR(<span style="color:#ae81ff">6000</span>),
+</span></span><span style="display:flex;"><span>	PAGE_URLFRAGMENT VARCHAR(<span style="color:#ae81ff">3000</span>),
+</span></span><span style="display:flex;"><span>	REFR_URLSCHEME VARCHAR(<span style="color:#ae81ff">16</span>),
+</span></span><span style="display:flex;"><span>	REFR_URLHOST VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	REFR_URLPORT NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	REFR_URLPATH VARCHAR(<span style="color:#ae81ff">6000</span>),
+</span></span><span style="display:flex;"><span>	REFR_URLQUERY VARCHAR(<span style="color:#ae81ff">6000</span>),
+</span></span><span style="display:flex;"><span>	REFR_URLFRAGMENT VARCHAR(<span style="color:#ae81ff">3000</span>),
+</span></span><span style="display:flex;"><span>	REFR_MEDIUM VARCHAR(<span style="color:#ae81ff">25</span>),
+</span></span><span style="display:flex;"><span>	REFR_SOURCE VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	REFR_TERM VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	MKT_MEDIUM VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	MKT_SOURCE VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	MKT_TERM VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	MKT_CONTENT VARCHAR(<span style="color:#ae81ff">500</span>),
+</span></span><span style="display:flex;"><span>	MKT_CAMPAIGN VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	SE_CATEGORY VARCHAR(<span style="color:#ae81ff">1000</span>),
+</span></span><span style="display:flex;"><span>	SE_ACTION VARCHAR(<span style="color:#ae81ff">1000</span>),
+</span></span><span style="display:flex;"><span>	SE_LABEL VARCHAR(<span style="color:#ae81ff">4096</span>),
+</span></span><span style="display:flex;"><span>	SE_PROPERTY VARCHAR(<span style="color:#ae81ff">1000</span>),
+</span></span><span style="display:flex;"><span>	SE_VALUE FLOAT,
+</span></span><span style="display:flex;"><span>	TR_ORDERID VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	TR_AFFILIATION VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	TR_TOTAL NUMBER(<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>	TR_TAX NUMBER(<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>	TR_SHIPPING NUMBER(<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>	TR_CITY VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	TR_STATE VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	TR_COUNTRY VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	TI_ORDERID VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	TI_SKU VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	TI_NAME VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	TI_CATEGORY VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	TI_PRICE NUMBER(<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>	TI_QUANTITY NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	PP_XOFFSET_MIN NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	PP_XOFFSET_MAX NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	PP_YOFFSET_MIN NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	PP_YOFFSET_MAX NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	USERAGENT VARCHAR(<span style="color:#ae81ff">1000</span>),
+</span></span><span style="display:flex;"><span>	BR_NAME VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	BR_FAMILY VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	BR_VERSION VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	BR_TYPE VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	BR_RENDERENGINE VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	BR_LANG VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	BR_FEATURES_PDF BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_FLASH BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_JAVA BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_DIRECTOR BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_QUICKTIME BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_REALPLAYER BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_WINDOWSMEDIA BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_GEARS BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_SILVERLIGHT BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_COOKIES BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_COLORDEPTH VARCHAR(<span style="color:#ae81ff">12</span>),
+</span></span><span style="display:flex;"><span>	BR_VIEWWIDTH NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	BR_VIEWHEIGHT NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	OS_NAME VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	OS_FAMILY VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	OS_MANUFACTURER VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	OS_TIMEZONE VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	DVCE_TYPE VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	DVCE_ISMOBILE BOOLEAN,
+</span></span><span style="display:flex;"><span>	DVCE_SCREENWIDTH NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	DVCE_SCREENHEIGHT NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	DOC_CHARSET VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	DOC_WIDTH NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	DOC_HEIGHT NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	TR_CURRENCY VARCHAR(<span style="color:#ae81ff">3</span>),
+</span></span><span style="display:flex;"><span>	TR_TOTAL_BASE NUMBER(<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>	TR_TAX_BASE NUMBER(<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>	TR_SHIPPING_BASE NUMBER(<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>	TI_CURRENCY VARCHAR(<span style="color:#ae81ff">3</span>),
+</span></span><span style="display:flex;"><span>	TI_PRICE_BASE NUMBER(<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>	BASE_CURRENCY VARCHAR(<span style="color:#ae81ff">3</span>),
+</span></span><span style="display:flex;"><span>	GEO_TIMEZONE VARCHAR(<span style="color:#ae81ff">64</span>),
+</span></span><span style="display:flex;"><span>	MKT_CLICKID VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	MKT_NETWORK VARCHAR(<span style="color:#ae81ff">64</span>),
+</span></span><span style="display:flex;"><span>	ETL_TAGS VARCHAR(<span style="color:#ae81ff">500</span>),
+</span></span><span style="display:flex;"><span>	DVCE_SENT_TSTAMP TIMESTAMP_NTZ(<span style="color:#ae81ff">9</span>),
+</span></span><span style="display:flex;"><span>	REFR_DOMAIN_USERID VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	REFR_DVCE_TSTAMP TIMESTAMP_NTZ(<span style="color:#ae81ff">9</span>),
+</span></span><span style="display:flex;"><span>	DOMAIN_SESSIONID VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	DERIVED_TSTAMP TIMESTAMP_NTZ(<span style="color:#ae81ff">9</span>),
+</span></span><span style="display:flex;"><span>	EVENT_VENDOR VARCHAR(<span style="color:#ae81ff">1000</span>),
+</span></span><span style="display:flex;"><span>	EVENT_NAME VARCHAR(<span style="color:#ae81ff">1000</span>),
+</span></span><span style="display:flex;"><span>	EVENT_FORMAT VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	EVENT_VERSION VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	EVENT_FINGERPRINT VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	TRUE_TSTAMP TIMESTAMP_NTZ(<span style="color:#ae81ff">9</span>),
+</span></span><span style="display:flex;"><span>	LOAD_TSTAMP TIMESTAMP_NTZ(<span style="color:#ae81ff">9</span>),
+</span></span><span style="display:flex;"><span>    CONTEXTS_COM_SNOWPLOWANALYTICS_MOBILE_SCREEN_1 VARCHAR,
+</span></span><span style="display:flex;"><span>    CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_CLIENT_SESSION_1 VARCHAR,
+</span></span><span style="display:flex;"><span>    CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_GEOLOCATION_CONTEXT_1 VARCHAR,
+</span></span><span style="display:flex;"><span>    CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_MOBILE_CONTEXT_1 VARCHAR,
+</span></span><span style="display:flex;"><span>    CONTEXTS_COM_SNOWPLOWANALYTICS_MOBILE_APPLICATION_1 VARCHAR,
+</span></span><span style="display:flex;"><span>    UNSTRUCT_EVENT_COM_SNOWPLOWANALYTICS_MOBILE_SCREEN_VIEW_1 VARCHAR,
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">constraint</span> EVENT_ID_PK <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span> (EVENT_ID)
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><hr>
+<h4 id="step-3-load-the-data"><strong>Step 3:</strong> Load the data</h4>
+<!-- raw HTML omitted -->
+<p>3.1 Log into your web interface and click on <code>Databases</code> tab.</p>
+<p>3.2 Locate the <strong>SAMPLE_EVENTS_BASE</strong> table that you just created and select it.</p>
+<p>3.3 Click the <code>Load Data</code> button to open the Load Data wizard.</p>
+<p>3.4 Select the relevant warehouse from the dropdown list. Click <code>Next</code>.</p>
+<p>3.5 Within the <code>Source Files</code> section select <code>Load files from your computer</code> option and click the <code>Select Files</code> button. If you have not saved the sample file provided as an attachment above please do so.
+Navigate to the <strong>SAMPLE_EVENTS.csv</strong> and click the <code>Upload</code> then the <code>Next</code> button.</p>
+<p>3.6 Create a new File Format with the plus (+) symbol beside the dropdown list, give it a name and change the following settings of the default csv file formats:</p>
+<ul>
+<li><code>Header lines to skip</code>= 1</li>
+<li><code>Field optionally enclosed by</code>= Double Quote</li>
+</ul>
+<p>3.7 Click the <code>Load</code> button (no need to alter the Load Options). Loading should take place within a couple of minutes.</p>
+<p>For more details please check out the official <a href="https://docs.snowflake.com/en/user-guide/data-load-web-ui.html">Snowflake documentation</a>.</p>
+<hr>
+<h4 id="step-4-create-the-atomicsample_events-table"><strong>Step 4:</strong> Create the <strong>ATOMIC.SAMPLE_EVENTS</strong> table</h4>
+<p>The Snowplow pipeline creates context fields as arrays but uploading the test data can be achieved through string/varchar data type first. Run the below DDL statement in your SQL editor to create the sample_events table from the base table including the necessary conversions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">OR</span> <span style="color:#66d9ef">REPLACE</span> <span style="color:#66d9ef">TABLE</span> TARGET_DB.<span style="color:#66d9ef">ATOMIC</span>.SAMPLE_EVENTS <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>	APP_ID,
+</span></span><span style="display:flex;"><span>	PLATFORM,
+</span></span><span style="display:flex;"><span>	ETL_TSTAMP,
+</span></span><span style="display:flex;"><span>	COLLECTOR_TSTAMP,
+</span></span><span style="display:flex;"><span>	DVCE_CREATED_TSTAMP,
+</span></span><span style="display:flex;"><span>	EVENT,
+</span></span><span style="display:flex;"><span>	EVENT_ID,
+</span></span><span style="display:flex;"><span>	TXN_ID,
+</span></span><span style="display:flex;"><span>	NAME_TRACKER,
+</span></span><span style="display:flex;"><span>	V_TRACKER,
+</span></span><span style="display:flex;"><span>	V_COLLECTOR,
+</span></span><span style="display:flex;"><span>	V_ETL,
+</span></span><span style="display:flex;"><span>	USER_ID,
+</span></span><span style="display:flex;"><span>	USER_IPADDRESS,
+</span></span><span style="display:flex;"><span>	USER_FINGERPRINT,
+</span></span><span style="display:flex;"><span>	DOMAIN_USERID,
+</span></span><span style="display:flex;"><span>	DOMAIN_SESSIONIDX,
+</span></span><span style="display:flex;"><span>	NETWORK_USERID,
+</span></span><span style="display:flex;"><span>	GEO_COUNTRY,
+</span></span><span style="display:flex;"><span>	GEO_REGION,
+</span></span><span style="display:flex;"><span>	GEO_CITY,
+</span></span><span style="display:flex;"><span>	GEO_ZIPCODE,
+</span></span><span style="display:flex;"><span>	GEO_LATITUDE,
+</span></span><span style="display:flex;"><span>	GEO_LONGITUDE,
+</span></span><span style="display:flex;"><span>	GEO_REGION_NAME,
+</span></span><span style="display:flex;"><span>	IP_ISP,
+</span></span><span style="display:flex;"><span>	IP_ORGANIZATION,
+</span></span><span style="display:flex;"><span>	IP_DOMAIN,
+</span></span><span style="display:flex;"><span>	IP_NETSPEED,
+</span></span><span style="display:flex;"><span>	PAGE_URL,
+</span></span><span style="display:flex;"><span>	PAGE_TITLE,
+</span></span><span style="display:flex;"><span>	PAGE_REFERRER,
+</span></span><span style="display:flex;"><span>	PAGE_URLSCHEME,
+</span></span><span style="display:flex;"><span>	PAGE_URLHOST,
+</span></span><span style="display:flex;"><span>	PAGE_URLPORT,
+</span></span><span style="display:flex;"><span>	PAGE_URLPATH,
+</span></span><span style="display:flex;"><span>	PAGE_URLQUERY,
+</span></span><span style="display:flex;"><span>	PAGE_URLFRAGMENT,
+</span></span><span style="display:flex;"><span>	REFR_URLSCHEME,
+</span></span><span style="display:flex;"><span>	REFR_URLHOST,
+</span></span><span style="display:flex;"><span>	REFR_URLPORT,
+</span></span><span style="display:flex;"><span>	REFR_URLPATH,
+</span></span><span style="display:flex;"><span>	REFR_URLQUERY,
+</span></span><span style="display:flex;"><span>	REFR_URLFRAGMENT,
+</span></span><span style="display:flex;"><span>	REFR_MEDIUM,
+</span></span><span style="display:flex;"><span>	REFR_SOURCE,
+</span></span><span style="display:flex;"><span>	REFR_TERM,
+</span></span><span style="display:flex;"><span>	MKT_MEDIUM,
+</span></span><span style="display:flex;"><span>	MKT_SOURCE,
+</span></span><span style="display:flex;"><span>	MKT_TERM,
+</span></span><span style="display:flex;"><span>	MKT_CONTENT,
+</span></span><span style="display:flex;"><span>	MKT_CAMPAIGN,
+</span></span><span style="display:flex;"><span>	SE_CATEGORY,
+</span></span><span style="display:flex;"><span>	SE_ACTION,
+</span></span><span style="display:flex;"><span>	SE_LABEL,
+</span></span><span style="display:flex;"><span>	SE_PROPERTY,
+</span></span><span style="display:flex;"><span>	SE_VALUE,
+</span></span><span style="display:flex;"><span>	TR_ORDERID,
+</span></span><span style="display:flex;"><span>	TR_AFFILIATION,
+</span></span><span style="display:flex;"><span>	TR_TOTAL,
+</span></span><span style="display:flex;"><span>	TR_TAX,
+</span></span><span style="display:flex;"><span>	TR_SHIPPING,
+</span></span><span style="display:flex;"><span>	TR_CITY,
+</span></span><span style="display:flex;"><span>	TR_STATE,
+</span></span><span style="display:flex;"><span>	TR_COUNTRY,
+</span></span><span style="display:flex;"><span>	TI_ORDERID,
+</span></span><span style="display:flex;"><span>	TI_SKU,
+</span></span><span style="display:flex;"><span>	TI_NAME,
+</span></span><span style="display:flex;"><span>	TI_CATEGORY,
+</span></span><span style="display:flex;"><span>	TI_PRICE,
+</span></span><span style="display:flex;"><span>	TI_QUANTITY,
+</span></span><span style="display:flex;"><span>	PP_XOFFSET_MIN,
+</span></span><span style="display:flex;"><span>	PP_XOFFSET_MAX,
+</span></span><span style="display:flex;"><span>	PP_YOFFSET_MIN,
+</span></span><span style="display:flex;"><span>	PP_YOFFSET_MAX,
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">REPLACE</span>(USERAGENT, <span style="color:#e6db74">&#39;\&#34;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#66d9ef">as</span> USERAGENT,
+</span></span><span style="display:flex;"><span>	BR_NAME,
+</span></span><span style="display:flex;"><span>	BR_FAMILY,
+</span></span><span style="display:flex;"><span>	BR_VERSION,
+</span></span><span style="display:flex;"><span>	BR_TYPE,
+</span></span><span style="display:flex;"><span>	BR_RENDERENGINE,
+</span></span><span style="display:flex;"><span>	BR_LANG,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_PDF,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_FLASH,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_JAVA,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_DIRECTOR,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_QUICKTIME,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_REALPLAYER,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_WINDOWSMEDIA,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_GEARS,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_SILVERLIGHT,
+</span></span><span style="display:flex;"><span>	BR_COOKIES,
+</span></span><span style="display:flex;"><span>	BR_COLORDEPTH,
+</span></span><span style="display:flex;"><span>	BR_VIEWWIDTH,
+</span></span><span style="display:flex;"><span>	BR_VIEWHEIGHT,
+</span></span><span style="display:flex;"><span>	OS_NAME,
+</span></span><span style="display:flex;"><span>	OS_FAMILY,
+</span></span><span style="display:flex;"><span>	OS_MANUFACTURER,
+</span></span><span style="display:flex;"><span>	OS_TIMEZONE,
+</span></span><span style="display:flex;"><span>	DVCE_TYPE,
+</span></span><span style="display:flex;"><span>	DVCE_ISMOBILE,
+</span></span><span style="display:flex;"><span>	DVCE_SCREENWIDTH,
+</span></span><span style="display:flex;"><span>	DVCE_SCREENHEIGHT,
+</span></span><span style="display:flex;"><span>	DOC_CHARSET,
+</span></span><span style="display:flex;"><span>	DOC_WIDTH,
+</span></span><span style="display:flex;"><span>	DOC_HEIGHT,
+</span></span><span style="display:flex;"><span>	TR_CURRENCY,
+</span></span><span style="display:flex;"><span>	TR_TOTAL_BASE,
+</span></span><span style="display:flex;"><span>	TR_TAX_BASE,
+</span></span><span style="display:flex;"><span>	TR_SHIPPING_BASE,
+</span></span><span style="display:flex;"><span>	TI_CURRENCY,
+</span></span><span style="display:flex;"><span>	TI_PRICE_BASE,
+</span></span><span style="display:flex;"><span>	BASE_CURRENCY,
+</span></span><span style="display:flex;"><span>	GEO_TIMEZONE,
+</span></span><span style="display:flex;"><span>	MKT_CLICKID,
+</span></span><span style="display:flex;"><span>	MKT_NETWORK,
+</span></span><span style="display:flex;"><span>	ETL_TAGS,
+</span></span><span style="display:flex;"><span>	DVCE_SENT_TSTAMP,
+</span></span><span style="display:flex;"><span>	REFR_DOMAIN_USERID,
+</span></span><span style="display:flex;"><span>	REFR_DVCE_TSTAMP,
+</span></span><span style="display:flex;"><span>	DOMAIN_SESSIONID,
+</span></span><span style="display:flex;"><span>	DERIVED_TSTAMP,
+</span></span><span style="display:flex;"><span>	EVENT_VENDOR,
+</span></span><span style="display:flex;"><span>	EVENT_NAME,
+</span></span><span style="display:flex;"><span>	EVENT_FORMAT,
+</span></span><span style="display:flex;"><span>	EVENT_VERSION,
+</span></span><span style="display:flex;"><span>	EVENT_FINGERPRINT,
+</span></span><span style="display:flex;"><span>	TRUE_TSTAMP,
+</span></span><span style="display:flex;"><span>	LOAD_TSTAMP,
+</span></span><span style="display:flex;"><span>    PARSE_JSON(CONTEXTS_COM_SNOWPLOWANALYTICS_MOBILE_SCREEN_1) <span style="color:#66d9ef">as</span> CONTEXTS_COM_SNOWPLOWANALYTICS_MOBILE_SCREEN_1,
+</span></span><span style="display:flex;"><span>    PARSE_JSON(CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_CLIENT_SESSION_1) <span style="color:#66d9ef">as</span> CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_CLIENT_SESSION_1,
+</span></span><span style="display:flex;"><span>    PARSE_JSON(CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_GEOLOCATION_CONTEXT_1) <span style="color:#66d9ef">as</span> CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_GEOLOCATION_CONTEXT_1,
+</span></span><span style="display:flex;"><span>    PARSE_JSON(CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_MOBILE_CONTEXT_1) <span style="color:#66d9ef">as</span> CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_MOBILE_CONTEXT_1,
+</span></span><span style="display:flex;"><span>    PARSE_JSON(CONTEXTS_COM_SNOWPLOWANALYTICS_MOBILE_APPLICATION_1) <span style="color:#66d9ef">as</span> CONTEXTS_COM_SNOWPLOWANALYTICS_MOBILE_APPLICATION_1,
+</span></span><span style="display:flex;"><span>    PARSE_JSON(UNSTRUCT_EVENT_COM_SNOWPLOWANALYTICS_MOBILE_SCREEN_VIEW_1) <span style="color:#66d9ef">as</span> UNSTRUCT_EVENT_COM_SNOWPLOWANALYTICS_MOBILE_SCREEN_VIEW_1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">ATOMIC</span>.SAMPLE_EVENTS_BASE )
+</span></span></code></pre></div><hr>
+<h4 id="step-5--drop-the-sample_events_base-table"><strong>Step 5:</strong>  Drop the <strong>SAMPLE_EVENTS_BASE</strong> table</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> TARGET_DB.<span style="color:#66d9ef">ATOMIC</span>.SAMPLE_EVENTS_BASE
+</span></span></code></pre></div><p>You will now have the ATOMIC.SAMPLE_EVENTS created and loaded with sample data.</p>
+
+        </div>
+        
+    </div>
+</div>
+
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/upload/" title="Upload sample data"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/modeling/" title="Modeling" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1664530343"></script>
+    <script src="/js/perfect-scrollbar.min.js?1664530343"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1664530343"></script>
+    <script src="/js/jquery.sticky.js?1664530343"></script>
+    <script src="/js/featherlight.min.js?1664530343"></script>
+    <script src="/js/highlight.pack.js?1664530343"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1664530343"></script>
+    <script src="/js/learn.js?1664530343"></script>
+    <script src="/js/hugo-learn.js?1664530343"></script>
+    
+        
+            <script src="/js/mermaid/9.1.7/mermaid.min.js"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+

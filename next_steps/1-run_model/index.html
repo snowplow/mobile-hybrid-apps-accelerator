@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> | </title>
+    <title>Model your pipeline data | </title>
 
     
     <link href="/css/nucleus.css?1664530343" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/next_steps/1-run_model/">
     <script type="text/javascript" async=1 >
       ;(function (p, l, o, w, i, n, g) { if (!p[i]) { p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || []; p.GlobalSnowplowNamespace.push(i); p[i] = function () { (p[i].q = p[i].q || []).push(arguments) }; p[i].q = p[i].q || []; n = l.createElement(o); g = l.getElementsByTagName(o)[0]; n.async = 1; n.src = w; g.parentNode.insertBefore(n, g) } }(window, document, "script", "/js/3.6.0/9LZR5r.js", "snowplow"));
       
@@ -594,7 +594,7 @@
 
 
 <li data-nav-id="/next_steps/" title="Next steps" class="dd-item
-        
+        parent
         
         
         ">
@@ -627,7 +627,7 @@
 
 
 <li data-nav-id="/next_steps/1-run_model/" title="Model your pipeline data"
-  class="dd-item ">
+  class="dd-item active">
   <a href="/next_steps/1-run_model/">
     Model your pipeline data
     
@@ -726,32 +726,116 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+               
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> / <a href='/next_steps/'>Next steps</a> / Model your pipeline data
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Model your pipeline data
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
-           
+<p>At this stage you should:</p>
+<ul>
+<li>Have tracking set-up</li>
+<li>Have some data in the <code>ATOMIC.EVENTS</code> table</li>
+<li>Have a working dbt project with the mobile model configurations for the sample data</li>
+</ul>
+<h4 id="step-1-complete-refresh-of-your-snowplow-mobile-package-optional"><strong>Step 1:</strong> Complete refresh of your Snowplow mobile package (Optional)</h4>
+<p>If you would like to use your current dbt environment that you set-up during modelling the sample data you might want to start from scratch.</p>
+<p>While you can drop and recompute the incremental tables within this package using the standard <code>--full-refresh</code> flag, all manifest tables are protected from being dropped in production. Without dropping the manifest during a full refresh, the selected derived incremental tables would be dropped but the processing of events would resume from where the package left off (as captured by the <code>snowplow_mobile_incremental_manifest</code> table) rather than your <code>snowplow__start_date</code>.</p>
+<p>In order to drop all the manifest tables and start again set the <code>snowplow__allow_refresh</code> variable to <code>true</code> at run time:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dbt run --select snowplow_mobile tag:snowplow_mobile_incremental --full-refresh --vars <span style="color:#e6db74">&#39;snowplow__allow_refresh: true&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># or using selector flag</span>
+</span></span><span style="display:flex;"><span>dbt run --selector snowplow_mobile --full-refresh --vars <span style="color:#e6db74">&#39;snowplow__allow_refresh: true&#39;</span>
+</span></span></code></pre></div><h4 id="step-2-modify-variables"><strong>Step 2:</strong> Modify variables</h4>
+<p>Assuming that you followed the guide on how to run the data model on the sample data, here we will only highlight the differences in the set-up:</p>
+<ul>
+<li>
+<p>Remove the <code>snowplow__events</code> variable. This time the base table will be the default <code>atomic.events</code>, therefore no need to overwrite it.</p>
+</li>
+<li>
+<p>Change the <code>snowplow__start_date</code> variable according to the data you have in your events table.</p>
+</li>
+</ul>
+<p>Optional:</p>
+<ul>
+<li><code>snowplow__backfill_limit_days</code>: The maximum number of days of new data to be processed since the latest event processed. Set it to 1.</li>
+</ul>
+
+<div class="notices note" ><p>We suggest changing <code>snowplow__backfill_limit_days</code> to 1 whilst working in your dev environment initially so that you can test how your incremental runs work. You will only have a few days of data available at this stage and if you leave it at the default 30 days, you will model all your data in one go.</p>
+</div>
+<h4 id="step-3-run-the-model"><strong>Step 3:</strong> Run the model</h4>
+<p>Execute the following either through your CLI or from within dbt Cloud</p>
+<pre tabindex="0"><code>dbt run --selector snowplow_mobile
+</code></pre><p>Depending on the period of data available since the <code>snowplow__start_date</code> and the <code>snowplow__backfill_limit_days</code> variable you might not process all your data during your first run. Each time the model runs it should display the period it processes and the timestamp of the last event processed for each model within the package. This gets saved in the <code>snowplow__incremental_manifest</code> table so you can always check the data processing state (see below).</p>
+<p><img src="../images/manifest.png" alt="manifest"></p>
+<h4 id="step-4-run-dbt-test"><strong>Step 4:</strong> Run dbt test</h4>
+<p>Run our recommended selector specified tests to identify potential issues with the data:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dbt test --selector snowplow_mobile_lean_tests
+</span></span></code></pre></div><hr>
+
+
+<footer class="footline">
 	
-		<h1>Customize your own home page</h1>
-		<p>
-		  The site is working. Don't forget to customize this homepage with your own. You typically have 3 choices :
-		</p>
-		<ul>
-			<li><b>1. </b> Create an _index.md document in <b>content</b> folder and fill it with Markdown content</li>
-			<li><b>2. </b> Create an <b>index.html</b> file in the <b>static</b> folder and fill the file with HTML content</li>
-		  <li><b>3. </b> Configure your server to automatically redirect home page to one your documentation page</li>
-		</ul>
-	
-  
+</footer>
+
         
         </div>
         
@@ -994,6 +1078,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1006,6 +1091,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1022,6 +1108,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1046,8 +1135,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/next_steps/" title="Next steps"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/introduction/" title="Mobile &amp; Hybrid App Analytics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/next_steps/2-custom_models/" title="Custom models" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
