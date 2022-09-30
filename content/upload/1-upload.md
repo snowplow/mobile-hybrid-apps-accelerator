@@ -30,22 +30,30 @@ pip install snowflake-connector-python==2.7.12
 Open the `snowflake_upload.py` file and edit the following variables.
 
 ##### 2.1 Connection details - update username, password and account
+
 ```python
-conn=sf.connect(user='your_username',password='your_password',account='your_account')
+user = 'YOUR_USERNAME'
+password = 'YOUR_PASSWORD'
+account = 'YOUR_ACCOUNT'
 ```
 
 ##### 2.2 Variables to be modified - warehouse and database
+
 ```python
 warehouse='YOUR_WAREHOUSE'
 database = 'YOUR_DB
 ```
+
 ##### 2.3 Path to the sample_data.csv
+
 ```python
 csv_file = '/Users/your_user/path_to_csv/sample_events.csv'
 ```
 
 #### **Step 3:** Upload Data
+
 Run `snowflake_upload.py`.
+
 ```bash
 python3 snowflake_upload.py
 ```
@@ -62,6 +70,7 @@ Data loaded into staging table
 Target table: YOUR_DB.ATOMIC.SAMPLE_EVENTS is created
 Staging table: YOUR_DB.ATOMIC.SAMPLE_EVENTS_STAGED is dropped
 ```
+
 You will now have the ATOMIC.SAMPLE_EVENTS created and loaded with sample data.
 
 {{% /tab %}}
@@ -73,6 +82,7 @@ Download the `upload.zip` folder which contains the `sample_events.csv` and the 
 For more details please check out the official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-web-ui.html).
 
 #### **Step 1:**  Create the ATOMIC schema
+
 If the ATOMIC schema doesn't exist, create it in your target database.
 
 ```sql
@@ -82,6 +92,7 @@ CREATE SCHEMA IF NOT EXISTS TARGET_DB.ATOMIC
 ***
 
 #### **Step 2:**  Create the SAMPLE_EVENTS_BASE table
+
 This is where you will load the sample data to. You will need to modify the TARGET_DB according to your own database.
 
 
@@ -217,15 +228,15 @@ This is where you will load the sample data to. You will need to modify the TARG
 	EVENT_FINGERPRINT VARCHAR(128),
 	TRUE_TSTAMP TIMESTAMP_NTZ(9),
 	LOAD_TSTAMP TIMESTAMP_NTZ(9),
-	CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_UA_PARSER_CONTEXT_1 VARCHAR,
-	CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_WEB_PAGE_1 VARCHAR,
-	CONTEXTS_COM_IAB_SNOWPLOW_SPIDERS_AND_ROBOTS_1 VARCHAR,
-	CONTEXTS_NL_BASJES_YAUAA_CONTEXT_1 VARCHAR,
+    CONTEXTS_COM_SNOWPLOWANALYTICS_MOBILE_SCREEN_1 VARCHAR,
+    CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_CLIENT_SESSION_1 VARCHAR,
+    CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_GEOLOCATION_CONTEXT_1 VARCHAR,
+    CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_MOBILE_CONTEXT_1 VARCHAR,
+    CONTEXTS_COM_SNOWPLOWANALYTICS_MOBILE_APPLICATION_1 VARCHAR,
+    UNSTRUCT_EVENT_COM_SNOWPLOWANALYTICS_MOBILE_SCREEN_VIEW_1 VARCHAR,
 	constraint EVENT_ID_PK primary key (EVENT_ID)
 );
 ```
-
-
 
 ***
 
@@ -393,10 +404,12 @@ SELECT
 	EVENT_FINGERPRINT,
 	TRUE_TSTAMP,
 	LOAD_TSTAMP,
-	PARSE_JSON(REPLACE(REPLACE(CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_UA_PARSER_CONTEXT_1,'\"', ''),'''','\"')) as CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_UA_PARSER_CONTEXT_1,
-	PARSE_JSON(REPLACE(REPLACE(CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_WEB_PAGE_1,'\"', ''),'''','\"')) as CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_WEB_PAGE_1,
-	PARSE_JSON(REPLACE(REPLACE(CONTEXTS_COM_IAB_SNOWPLOW_SPIDERS_AND_ROBOTS_1,'\"', ''),'''','\"')) as CONTEXTS_COM_IAB_SNOWPLOW_SPIDERS_AND_ROBOTS_1,
-	PARSE_JSON(REPLACE(REPLACE(CONTEXTS_NL_BASJES_YAUAA_CONTEXT_1,'\"', ''),'''','\"')) as CONTEXTS_NL_BASJES_YAUAA_CONTEXT_1
+    PARSE_JSON(CONTEXTS_COM_SNOWPLOWANALYTICS_MOBILE_SCREEN_1) as CONTEXTS_COM_SNOWPLOWANALYTICS_MOBILE_SCREEN_1,
+    PARSE_JSON(CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_CLIENT_SESSION_1) as CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_CLIENT_SESSION_1,
+    PARSE_JSON(CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_GEOLOCATION_CONTEXT_1) as CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_GEOLOCATION_CONTEXT_1,
+    PARSE_JSON(CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_MOBILE_CONTEXT_1) as CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_MOBILE_CONTEXT_1,
+    PARSE_JSON(CONTEXTS_COM_SNOWPLOWANALYTICS_MOBILE_APPLICATION_1) as CONTEXTS_COM_SNOWPLOWANALYTICS_MOBILE_APPLICATION_1,
+    PARSE_JSON(UNSTRUCT_EVENT_COM_SNOWPLOWANALYTICS_MOBILE_SCREEN_VIEW_1) as UNSTRUCT_EVENT_COM_SNOWPLOWANALYTICS_MOBILE_SCREEN_VIEW_1
 
 FROM ATOMIC.SAMPLE_EVENTS_BASE )
 
