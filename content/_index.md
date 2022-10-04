@@ -1,14 +1,9 @@
 +++
-title = "Mobile & Hybrid App Analytics"
-menuTitle="Introduction"
+title = "Introduction"
+menuTitle = "Introduction"
+pre = "<i class='fas fa-rocket'></i> "
 chapter = false
 weight = 1
-post = ""
-
-aliases = [
-    "/en",
-    "/en/introduction"
-]
 +++
 
 !['logo-banner'](images/logo_banner.png)
