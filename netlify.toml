@@ -1,21 +1,23 @@
 [build]
 publish = 'public'
-command = './scripts/build.sh'
+command = './scripts/build.sh $BUILD_OUTPUT_PATH'
 [build.environment]
 HUGO_VERSION = '0.104.1'
+HUGO_BASEURL = 'https://docs.snowplow.io/accelerators/mobile-hybrid-analytics/'
+BUILD_OUTPUT_PATH = '/accelerators/mobile-hybrid-analytics/'
 
 [context.production]
 [context.production.environment]
 HUGO_ENV = 'production'
 
-[[redirects]]
-from = "/"
-to = "/introduction"
-status = 301
-force = true
+[context.deploy-preview]
+command = './scripts/build.sh $BUILD_OUTPUT_PATH $DEPLOY_PRIME_URL'
+
+[context.branch-deploy]
+command = './scripts/build.sh $BUILD_OUTPUT_PATH $DEPLOY_PRIME_URL'
 
 [[redirects]]
-# redirect from language specific page following restructure
-from = "/en/introduction"
-to = "/introduction"
+from = "/*"
+to = "/accelerators/mobile-hybrid-analytics/:splat"
+force = true
 status = 301

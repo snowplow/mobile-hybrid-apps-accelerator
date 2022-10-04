@@ -1,4 +1,5 @@
 title = "Mobile & Hybrid App Analytics"
+baseURL = "https://docs.snowplow.io/accelerators/mobile-hybrid-analytics/"
 
 [params]
   description = "Tutorial for setting up Snowplow for mobile hybrid apps"
