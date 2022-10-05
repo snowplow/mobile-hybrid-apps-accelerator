@@ -7,20 +7,22 @@ It also introduces the Snowplow dbt mobile data model.
 
 Recursively update the git submodules:
 
-```
+```sh
 git submodule update --init --recursive
 ```
 
-Build the Hugo app:
+To build the Hugo app:
 
-```
-./scripts/build.sh
+```sh
+./scripts/build.sh build
 ```
 
 ## Usage
 
-Run an HTTP server inside the `public` folder. For example, using Python:
+To start an HTTP server serving the app, use:
 
+```sh
+./scripts/build.sh serve
 ```
-python3 -m http.server --directory public
-```
+
+This will run `hugo server` on the background.
