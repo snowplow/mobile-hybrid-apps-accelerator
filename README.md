@@ -14,7 +14,7 @@ git submodule update --init --recursive
 To build the Hugo app:
 
 ```sh
-./scripts/build.sh build
+./scripts/run.sh build
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ To build the Hugo app:
 To start an HTTP server serving the app, use:
 
 ```sh
-./scripts/build.sh serve
+./scripts/run.sh serve
 ```
 
 This will run `hugo server` on the background.
