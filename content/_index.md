@@ -1,14 +1,9 @@
 +++
-title = "Mobile & Hybrid App Analytics"
-menuTitle="Introduction"
+title = "Introduction"
+menuTitle = "Introduction"
+pre = "<i class='fas fa-rocket'></i> "
 chapter = false
 weight = 1
-post = ""
-
-aliases = [
-    "/en",
-    "/en/introduction"
-]
 +++
 
 !['logo-banner'](images/logo_banner.png)
@@ -145,3 +140,11 @@ gantt
 {{% notice info %}}
 Please note that Snowflake will be used for illustration but the snowplow-mobile dbt package also supports **BigQuery, Databricks, Postgres** and **Redshift**. Further adapter support for this accelerator coming soon!
 {{% /notice %}}
+
+***
+
+#### What you will build
+
+**Mobile & Hybrid Apps Analytics Dashboard**
+
+!['logo-banner' ](visualisation/images/streamlit.png?width=100pc)
