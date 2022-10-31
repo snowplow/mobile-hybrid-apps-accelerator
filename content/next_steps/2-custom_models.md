@@ -8,4 +8,4 @@ post = ""
 
 You are ready to take action and use your Snowplow generated data to help your business grow.
 
-As a next step you might want to check out our [detailed guide](https://docs.snowplow.io/dbt-snowplow-mobile/#!/overview/snowplow_mobile) on how to create custom models to adjust the `snowplow-mobile` data model to your own needs if the out-of-the box solution does not fully fit your needs.
+As a next step you might want to check out our [detailed guide](https://docs.snowplow.io/docs/modeling-your-data/modeling-your-data-with-dbt/dbt-custom-models/) on how to create custom models to adjust the `snowplow-mobile` data model to your own needs if the out-of-the box solution does not fully fit your needs.
