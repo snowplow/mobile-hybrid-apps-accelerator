@@ -39,6 +39,7 @@ account = "xxx"
 database = "xxx"
 schema = "xxx"
 warehouse = "xxx"
+role = "xxx"
 ```
 
 #### **Step 3:** Run the Streamlit dashboard
