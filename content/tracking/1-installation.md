@@ -23,7 +23,7 @@ import { trackSelfDescribingEvent } from '@snowplow/webview-tracker';
 There is no need to configure the WebView tracker.
 All configuration is done in the native layer as explained next.
 
-#### Snowplow iOS and Android tracker installation
+#### Snowplow iOS, Android and React Native tracker installation
 
 First, you will need to install the Snowplow tracker package in your app.
 Below, we show how to do so using the Swift Package Manager (SPM) on iOS and Gradle on Android.
@@ -52,6 +52,16 @@ dependencies {
   implementation 'androidx.lifecycle-extensions:2.2.+'
   ...
 }
+```
+
+{{% /tab %}}
+
+{{% tab name="React Native" %}}
+
+To install the tracker, add it as a dependency to your React Native app:
+
+```bash
+npm install --save @snowplow/react-native-tracker
 ```
 
 {{% /tab %}}

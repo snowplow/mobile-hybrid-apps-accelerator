@@ -11,7 +11,7 @@ mkdir build
 echo "Importing config..."
 cp accelerator-web-ui-template/config.toml build/baseconfig.toml
 cp config.toml build/config.toml
-cp -R content build/
+ln -s $(pwd)/content build/content
 
 echo "Importing themes..."
 mkdir build/themes
