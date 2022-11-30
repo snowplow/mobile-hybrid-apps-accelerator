@@ -156,7 +156,7 @@ Snowplow.subscribeToWebViewEvents(webView);
 
 The tracker supports Web views created using the [React Native WebView package](https://www.npmjs.com/package/react-native-webview).
 
-You can call pass a callback created using `getWebViewCallback()` as a parameter you in your `WebView` component:
+You can pass a callback created using `getWebViewCallback()` as a parameter in your `WebView` component:
 
 ```typescript
 import { getWebViewCallback } from '@snowplow/react-native-tracker';
