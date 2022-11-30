@@ -59,8 +59,8 @@ const tracker = createTracker(
     {
         trackerConfig: {
             appId: 'appTracker',
-        }
-    }
+        },
+    },
 );
 ```
 
@@ -114,8 +114,8 @@ tracker.track(event);
 tracker.trackSelfDescribingEvent({
     schema: 'iglu:com.snowplowanalytics.snowplow/link_click/jsonschema/1-0-1',
     data: {
-        targetUrl: 'http://a-target-url.com'
-    }
+        targetUrl: 'http://a-target-url.com',
+    },
 });
 ```
 
