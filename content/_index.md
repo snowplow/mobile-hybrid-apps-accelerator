@@ -18,7 +18,7 @@ Here you will learn to:
   - using the [snowplow-mobile](https://hub.getdbt.com/snowplow/snowplow_mobile/latest/) dbt package and Streamlit
   - using our sample data for Snowflake (no need to have a working pipeline)
 - Set-up Snowplow Tracking in a hybrid mobile app
-  - track events both from a native iOS/Android code as well as embedded Web views
+  - track events both from a native iOS/Android/React Native code as well as embedded Web views
 - Apply what you have learned on your own pipeline to gain insights
 
 ***
@@ -32,7 +32,7 @@ Our goal is to have both events tracked from the native code as well as the Web 
 The diagram below gives a complete overview of the system covered in this accelerator:
 
 1. Events are tracked from app logic both inside the **Web view** as well as the **native app code**.
-   - Native code events are tracked using the [Snowplow iOS](https://github.com/snowplow/snowplow-objc-tracker) or [Android tracker](https://github.com/snowplow/snowplow-android-tracker).
+   - Native code events are tracked using the [Snowplow iOS](https://github.com/snowplow/snowplow-objc-tracker), [Android](https://github.com/snowplow/snowplow-android-tracker), or [React Native tracker](https://github.com/snowplow/snowplow-react-native-tracker).
    - Web view events are tracked using the [WebView tracker](https://github.com/snowplow-incubator/snowplow-webview-tracker) that passes them to be tracked by the Snowplow iOS or Android tracker.
 2. Tracked events are loaded into a **Snowflake warehouse** by the Snowplow BDP or Open Source Cloud.
 3. The raw events are **modeled into higher level entities** such as screen views, sessions, or users using the [snowplow-mobile](https://docs.snowplowanalytics.com/docs/modeling-your-data/the-snowplow-mobile-data-model/dbt-mobile-data-model/) dbt package.
@@ -55,7 +55,7 @@ subgraph hybridApp[Hybrid Mobile App]
 
     subgraph nativeCode[Native iOS/Android]
         nativeAppCode[App logic]
-        nativeTracker[Snowplow iOS/Android tracker]
+        nativeTracker[Snowplow iOS/Android/React Native tracker]
 
         nativeAppCode -- "Tracks events" --> nativeTracker
 
