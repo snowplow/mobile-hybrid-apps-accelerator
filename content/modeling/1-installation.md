@@ -6,12 +6,12 @@ post = ""
 
 #### **Step 1:** Add snowplow-mobile package
 
-Add the snowplow-web package to your packages.yml file. The latest version can be found [here](https://hub.getdbt.com/snowplow/snowplow_web/latest/)
+Add the snowplow-mobile package to your packages.yml file. The latest version can be found [here](https://hub.getdbt.com/snowplow/snowplow_mobile/latest/)
 
 ```yml
 packages:
   - package: snowplow/snowplow_mobile
-    version: 0.5.3
+    version: {{<component name="snowplow_mobile_latest">}}
 ```
 
 ***

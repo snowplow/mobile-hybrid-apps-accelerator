@@ -6,12 +6,16 @@ weight = 1
 
 Streamlit uses Python to build shareable dashboards without the need for front-end development experience.
 
-Download the `streamlit-visualisation` project template and copy the unzipped folder to your project directory to get started.
+#### **Step 1:** Clone the repository
+Run the command below to download the example dashboard:
 
-{{% attachments style="blue" %}}
-{{% /attachments %}}
+```bash
+git clone --depth 1  --filter=blob:none --sparse https://github.com/snowplow-incubator/snowplow-accelerator-resources.git ; 
+cd snowplow-accelerator-resources
+git sparse-checkout set advanced-analytics-hybrid/snowflake/streamlit
+```
 
-#### **Step 1:** Install requirements
+#### **Step 2:** Install requirements
 Run the command below to install the project requirements and run the virtual environment
 
 ❗❗ **This implementation has been tested with the following dependencies: *python=3.9.13, streamlit=1.12.0, snowflake-connector-python==2.7.9*. If you run into package compatibility issues or encounter any errors try using them to build your own environment.**
@@ -22,7 +26,7 @@ pipenv install
 pipenv shell
 ```
 
-#### **Step 2:** Set-up Database Connection
+#### **Step 3:** Set-up Database Connection
 
 Open `secrets.toml` and add your Snowflake account and database details.
 {{% notice warning %}}
@@ -42,7 +46,7 @@ warehouse = "xxx"
 role = "xxx"
 ```
 
-#### **Step 3:** Run the Streamlit dashboard
+#### **Step 4:** Run the Streamlit dashboard
 
 Run the command below to run the streamlit locally
 
