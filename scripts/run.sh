@@ -14,13 +14,13 @@ cp config.toml build/config.toml
 ln -s $(pwd)/content build/content
 
 echo "Importing themes..."
+git submodule update --init --recursive
 mkdir build/themes
 cp -R accelerator-web-ui-template/themes/hugo-theme-learn build/themes/
 cp -R accelerator-web-ui-template/layouts build/
 cp -R accelerator-web-ui-template/static build/
 cp -R accelerator-web-ui-template/data build/ 
 cd build
-git submodule update --init --recursive
 
 echo "Creating Hugo site..."
 HUGO_COMMAND="hugo"
