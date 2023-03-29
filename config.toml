@@ -4,3 +4,4 @@ baseURL = "https://docs.snowplow.io/accelerators/hybrid/"
 [params]
   description = "Tutorial for setting up Snowplow for mobile hybrid apps"
   author = "Snowplow"
+  intercom=false
