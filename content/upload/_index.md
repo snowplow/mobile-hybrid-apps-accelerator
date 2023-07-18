@@ -10,7 +10,7 @@ pre = "1. "
 
 {{<mermaid>}}
 flowchart LR
-    id1(Upload)-->id2(Model)-->id3(Visualise)-->id4(Track)-->id5(Next steps)
+    id1(Upload)-->id2(Model)-->id3(Visaualize)-->id4(Track)-->id5(Next steps)
     style id1 fill:#f5f5f5,stroke:#6638B8,stroke-width:3px
     style id2 fill:#f5f5f5,stroke:#333,stroke-width:1px
     style id4 fill:#f5f5f5,stroke:#333,stroke-width:1px
@@ -18,4 +18,4 @@ flowchart LR
     style id3 fill:#f5f5f5,stroke:#333,stroke-width:1px
 {{</mermaid >}}
 
-A sample events dataset for your Snowflake warehouse has been provided. This will allow you to be able to start data modeling and getting familiar with Snowplow event data, without the need to have a working pipeline. This chapter will guide you through this process.
+A sample events dataset for your warehouse has been provided. This will allow you to be able to start data modeling and getting familiar with Snowplow event data, without the need to have a working pipeline. This chapter will guide you through this process.
