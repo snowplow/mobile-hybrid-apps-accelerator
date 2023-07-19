@@ -10,7 +10,7 @@ Streamlit uses Python to build shareable dashboards without the need for front-e
 Run the command below to download the example dashboard:
 
 ```bash
-git clone --depth 1  --filter=blob:none --sparse https://github.com/snowplow-incubator/snowplow-accelerator-resources.git ; 
+git clone --depth 1  --filter=blob:none --sparse https://github.com/snowplow-incubator/snowplow-accelerator-resources.git ;
 cd snowplow-accelerator-resources
 git sparse-checkout set advanced-analytics-hybrid/streamlit
 ```
@@ -39,6 +39,32 @@ For BigQuery: make sure you specify your custom `derived` dataset which will be 
 Ensure `secrets.toml` is in `.gitignore` to keep your information safe.
 {{% /notice %}}
 
+{{< tabs groupId="dwh-select" >}}
+{{% tab name="BigQuery" %}}
+
+For BigQuery, we recommend setting up your credentials in a similar way to your dbt `profiles.yml`, as seen [here](https://docs.getdbt.com/reference/warehouse-setups/bigquery-setup#service-account-json)
+
+```toml
+# .streamlit/secrets.toml
+
+[gcp_service_account]
+type = "service_account"
+project_id = "xxx"
+private_key_id = "xxx"
+private_key = "xxx"
+client_email = "xxx"
+client_id = "xxx"
+auth_uri = "https://accounts.google.com/o/oauth2/auth"
+token_uri = "https://oauth2.googleapis.com/token"
+auth_provider_x509_cert_url = "https://www.googleapis.com/oauth2/v1/certs"
+client_x509_cert_url = "xxx"
+
+[bigquery]
+dataset = "dbt_xxx_derived"
+```
+{{% /tab %}}
+{{% tab name="Snowflake" %}}
+
 
 For Snowflake we recommend setting up your credentials in a similar way to your dbt `profile.yml`, as seen [here](https://docs.getdbt.com/reference/warehouse-setups/snowflake-setup#user--password-authentication)
 
@@ -55,17 +81,34 @@ warehouse = "xxx"
 role = "xxx"
 ```
 
-
-#### **Step 4:** Run the Streamlit dashboard
-
-Run the command below to run the streamlit locally
-
-```bash
-streamlit run Dashboard.py
-```
-
 {{% notice tip %}}
-In case the dashboard does not load due to errors such as 'This session does not have a current database. Call 'USE DATABASE', or use a qualified name.' a possible workaround is to assign default ROLE to the Snowflake user that could handle this.
+In case the dashboard does not load due to errors such as 'This session does not have a current database. Call 'USE DATABASE', or use a qualified name.' a possible workaround is to assign default ROLE to the Snowflake user that could handle this.'
 {{% /notice %}}
 
-!['streamlit'](../images/streamlit.png)
+{{% /tab %}}
+
+{{% tab name="Databricks" %}}
+
+For Databricks, we recommend setting up your credentials in a similar way to your dbt `profiles.yml`, as seen [here](https://docs.getdbt.com/reference/warehouse-setups/databricks-setup#set-up-a-databricks-target)
+
+```toml
+# .streamlit/secrets.toml
+
+[databricks]
+databricks_server_hostname = "xxx"
+databricks_http_path = "xxx"
+databricks_token = "xxx"
+schema = "xxx" # This should point to your derived schema
+catalog = "xxx"
+
+```
+{{% /tab %}}
+{{< /tabs >}}
+
+#### **Step 4:** Specify warehouse
+Edit the warehouse you are using on line 10 of the `Dashboard.py` file to one of `snowflake`, `bigquery` or `databricks`.
+
+
+#### **Step 5:** Run the Streamlit dashboard
+
+Run the command below to run the streamlit locally
