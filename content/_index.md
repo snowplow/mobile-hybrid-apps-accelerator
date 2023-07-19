@@ -13,7 +13,7 @@ Welcome to the **Mobile & Hybrid App Analytics** accelerator. Once finished, you
 
 Here you will learn to:
 
-- Model and Visaualize Snowplow data
+- Model and Visualize Snowplow data
   - using the [snowplow-mobile](https://hub.getdbt.com/snowplow/snowplow_mobile/latest/) dbt package and Streamlit
   - using our sample data (no need to have a working pipeline)
 - Set-up Snowplow Tracking in a hybrid mobile app
@@ -40,7 +40,7 @@ In approximately 2 working days (~12 working hours) you can achieve the followin
 
 - **Upload data -** Upload a sample Snowplow events dataset to your warehouse
 - **Model -** Configure and run the snowplow-mobile data model
-- **Visaualize -** Visaualize the modeled data with Streamlit
+- **Visualize -** Visualize the modeled data with Streamlit
 - **Track -** Set-up and deploy tracking to your hybrid mobile app
 - **Next steps -** Gain value from your own pipeline data through modeling and visualization
 
@@ -53,7 +53,7 @@ gantt
         1h          :upload, 00-00, 1m
         section 2. Model
         2h          :model, after upload, 2m
-        section 3. Visaualize
+        section 3. Visualize
         2h          :visualize, after model, 3m
         section 4. Track
         6h          :track, after visualize, 6m
@@ -140,7 +140,7 @@ subgraph cloud[Cloud]
 
     snowplow -- "Loads raw events" --> warehouse
     dbt -- "Models data" --> warehouse
-    warehouse -- "Visaualizes modeled data" --> streamlit
+    warehouse -- "Visualizes modeled data" --> streamlit
 
     style dbt fill:#f5f5f5,stroke:#6638B8,stroke-width:3px
     click dbt "https://docs.snowplowanalytics.com/docs/modeling-your-data/the-snowplow-mobile-data-model/dbt-mobile-data-model/" "Open dbt package" _blank
